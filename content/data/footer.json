@@ -1,0 +1,110 @@
+{
+    "logo": {
+        "url": "/images/Logo White.png",
+        "altText": "Logo light",
+        "type": "ImageBlock"
+    },
+    "text": "",
+    "primaryLinks": {
+        "title": "",
+        "links": [
+            {
+                "label": "Private Ecotours",
+                "altText": "Ecotours page",
+                "url": "/ecotours",
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Family EcoCamps",
+                "url": "/Family-EcoCamps",
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "type": "Link",
+                "altText": ""
+            },
+            {
+                "type": "Link",
+                "label": "Student EcoCamps",
+                "altText": "",
+                "url": "/Student-EcoCamps",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "elementId": ""
+            }
+        ],
+        "type": "FooterLinksGroup"
+    },
+    "socialLinks": [
+        {
+            "altText": "Instagram link",
+            "url": "https://www.instagram.com/cloud.mountain.sustainability/",
+            "icon": "instagram",
+            "type": "Social"
+        },
+        {
+            "altText": "LinkedIn link",
+            "url": "https://www.linkedin.com/company/cloud-mountain-sustainability/",
+            "icon": "linkedin",
+            "type": "Social"
+        }
+    ],
+    "legalLinks": [],
+    "copyrightText": "© Lijiang Cloud Mountain Education Consulting Co. Ltd.\n",
+    "colors": "bg-dark-fg-light",
+    "type": "Footer",
+    "styles": {
+        "self": {
+            "padding": [
+                "pb-0",
+                "pt-5",
+                "pl-3",
+                "pr-3"
+            ]
+        }
+    },
+    "secondaryLinks": {
+        "type": "FooterLinksGroup",
+        "title": "",
+        "links": [
+            {
+                "type": "Link",
+                "label": "Why Us",
+                "altText": "",
+                "url": "/why-us",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "elementId": ""
+            },
+            {
+                "type": "Link",
+                "label": "About Us",
+                "altText": "",
+                "url": "/about-us",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "elementId": ""
+            },
+            {
+                "type": "Link",
+                "label": "Contact Us",
+                "altText": "",
+                "url": "/contact-us",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "elementId": ""
+            }
+        ]
+    }
+}
