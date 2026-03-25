@@ -14,7 +14,11 @@ export default function FeaturedItem(props) {
     const hasTextContent = !!(tagline || title || subtitle || text || actions.length > 0);
     const hasImage = !!image?.url;
 
-    return (
+    // Get the first action URL for whole-card click
+    const firstActionUrl = actions?.[0]?.url;
+    const firstActionLabel = actions?.[0]?.label;
+
+    const cardContent = (
         <div
             id={elementId}
             className={classNames(
@@ -31,7 +35,10 @@ export default function FeaturedItem(props) {
                     : undefined,
                 styles?.self?.borderRadius ? mapStyles({ borderRadius: styles?.self?.borderRadius }) : undefined,
                 styles?.self?.textAlign ? mapStyles({ textAlign: styles?.self?.textAlign }) : undefined,
-                'overflow-hidden'
+                'overflow-hidden',
+                'transition-all duration-300',
+                'hover:-translate-y-1.5 hover:shadow-xl',
+                firstActionUrl ? 'cursor-pointer' : undefined
             )}
             data-sb-field-path={fieldPath}
         >
@@ -87,7 +94,7 @@ export default function FeaturedItem(props) {
                                 {text}
                             </Markdown>
                         )}
-                        {actions.length > 0 && (
+                        {actions.length > 0 && firstActionUrl && (
                             <div
                                 className={classNames(
                                     'flex',
@@ -101,14 +108,9 @@ export default function FeaturedItem(props) {
                                 )}
                                 {...(fieldPath && { 'data-sb-field-path': '.actions' })}
                             >
-                                {actions.map((action, index) => (
-                                    <Action
-                                        key={index}
-                                        {...action}
-                                        className="lg:whitespace-nowrap"
-                                        {...(fieldPath && { 'data-sb-field-path': `.${index}` })}
-                                    />
-                                ))}
+                                <span className="text-primary-700 dark:text-primary-300 font-medium">
+                                    View more &rarr;
+                                </span>
                             </div>
                         )}
                     </div>
@@ -116,6 +118,21 @@ export default function FeaturedItem(props) {
             </div>
         </div>
     );
+
+    // Wrap the entire card in an anchor tag if there's a URL
+    if (firstActionUrl) {
+        return (
+            <a
+                href={firstActionUrl}
+                className="block no-underline"
+                {...(fieldPath && { 'data-sb-field-path': fieldPath })}
+            >
+                {cardContent}
+            </a>
+        );
+    }
+
+    return cardContent;
 }
 
 function mapFlexDirectionStyles(flexDirection: string, hasTextContent: boolean, hasImage: boolean) {

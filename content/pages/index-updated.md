@@ -1,79 +1,96 @@
 ---
 title: Cloud Mountain
-slug: /NEW/index2
+slug: /updated
 sections:
   - type: GenericSection
-    title:
-      type: TitleBlock
-      text: ''
     subtitle: ''
     text: ''
+    actions: []
     media:
+      altText: >-
+        Sustainable Ecotours and Nature Education in Yunnan Lijiang & Tibetan
+        Shangri-La | Cloud Mountain 
+      elementId: ''
       type: ImageBlock
-      altText: Cloud Mountain Hero
-      url: /images/CM Hero.webp
-    elementId: hero
+      url: /images/CM Hero OPTIMIZED.webp
+      styles:
+        self:
+          borderRadius: none
+    badge:
+      label: Cloud mountain
+      color: text-dark
+      type: Badge
+    elementId: ''
     colors: bg-light-fg-dark
     styles:
       self:
         alignItems: center
-        flexDirection: row
+        flexDirection: col-reverse
         padding:
           - pt-0
           - pl-0
-          - pb-0
+          - pb-2
           - pr-0
         justifyContent: center
         margin:
           - ml-0
           - mr-0
       text:
-        textAlign: center
-
+        textAlign: justify
+    title:
+      type: TitleBlock
+      text: ''
+      color: text-dark
+      styles:
+        self:
+          fontWeight: 400
   - type: GenericSection
     title:
       type: TitleBlock
       text: Authentic Sustainable Adventures in Lijiang and Shangri-La
       color: text-dark
-      styles:
-        self:
-          fontWeight: 400
-          fontSize: xxx-large
     subtitle: ''
-    text: Curated eco-friendly adventures that connect you with local nature and culture while supporting communities and conservation.
+    text: >
+      Curated eco-friendly adventures that connect you with local nature and culture while supporting communities and conservation.
     actions:
       - type: Button
         label: Explore EcoExperiences
         altText: ''
         url: /ecotours
         showIcon: false
+        icon: arrowRight
+        iconPosition: right
         style: primary
         elementId: ''
+    media:
+      type: ImageBlock
+      altText: Fun feature preview
     badge:
       type: Badge
-      label: Cloud Mountain
-      color: text-dark
-      styles:
-        self:
-          fontWeight: 500
-    elementId: ''
-    colors: bg-primary-fg-light
+      label: CLOUD MOUNTAIN
+      color: text-primary
+    colors: bg-light-fg-dark
     styles:
       self:
         alignItems: center
-        flexDirection: row
-        padding:
-          - pt-20
-          - pl-3
-          - pb-20
-          - pr-3
         justifyContent: center
-        margin:
-          - ml-0
-          - mr-0
-      text:
-        textAlign: left
-
+        padding:
+          - pt-3
+          - pb-4
+          - pl-3
+          - pr-3
+        flexDirection: row
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-12
+          - pl-12
+          - pb-9
+          - pr-12
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
@@ -82,104 +99,173 @@ sections:
       styles:
         self:
           textAlign: center
-    subtitle: Handpicked adventures that create meaningful connections
+    subtitle: ''
     items:
       - type: FeaturedItem
-        title: Ancient Rice Terraces Trek
-        tagline: Bestseller
-        subtitle: 📍 Yuanyang | ⏱️ 2 Days | From ¥1,280
-        text: Hike through UNESCO-listed rice terraces and learn traditional farming.
+        title: Naxi Heritage Walk
+        tagline: Half-Day | Cultural Heritage Walk
+        subtitle: from $48 to $68 per person
+        text: >
+          Experience a private ecotour in Lijiang Old Town, immersing yourself
+          in Naxi culture through historical sites, serene parks, and vibrant
+          streets filled with local crafts, blending history, nature and culture
+          of this exeptional World Heritage Site.
         image:
           type: ImageBlock
-          url: ''
-          altText: Ancient Rice Terraces Trek
+          url: /images/DY-Banner Icon.webp
+          altText: Naxi Heritage Walk Ecotour Lijiang - Cloud Mountain
+          elementId: ''
+          styles:
+            self:
+              borderRadius: x-large
         actions:
           - type: Button
             label: Learn More
-            url: ''
+            altText: ''
+            url: /lijiang-old-town-ecotour/
+            showIcon: false
             icon: arrowRight
             iconPosition: right
             style: secondary
-        colors: bg-light-fg-dark
+            elementId: ''
+        colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
+            borderRadius: x-large
             flexDirection: col
             justifyContent: center
             textAlign: left
+            margin:
+              - ml-1
+              - mr-1
       - type: FeaturedItem
-        title: Indigenous Village Homestay
-        tagline: Family Friendly
-        subtitle: 📍 Shaxi Village | ⏱️ 3 Days | From ¥980
-        text: Live with local families and experience traditional Yi and Bai cultures.
+        title: "Hidden\_Jade Dragon"
+        tagline: One Day | Off-the-beaten-path
+        subtitle: from $192 to $242 per person
+        text: >+
+          Escape the crowds on an
+
+          authentic Lijiang ecotour! Explore hidden temples, pristine wetlands
+          and secluded minority
+
+          villages. Hike with a ranger in the Jade Dragon Snow Mountain Nature
+          Reserve and
+
+          share a meal with the Yi people. An unforgettable adventure awaits!
+
         image:
           type: ImageBlock
-          url: ''
-          altText: Indigenous Village Homestay
+          url: /images/YL-Banner Icon 5.webp
+          altText: Hidden Jade Dragon Ecotour Lijiang - Off the Beaten Path Adventure
+          elementId: ''
+          styles:
+            self:
+              borderRadius: x-large
         actions:
           - type: Button
             label: Learn More
-            url: ''
+            altText: ''
+            url: /hidden-jade-dragon-ecotour
+            showIcon: false
             icon: arrowRight
             iconPosition: right
             style: secondary
-        colors: bg-light-fg-dark
+            elementId: ''
+        colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
+            borderRadius: x-large
             flexDirection: col
             justifyContent: center
             textAlign: left
+            margin:
+              - ml-1
+              - mr-1
       - type: FeaturedItem
-        title: Tiger Leaping Gorge Expedition
-        tagline: Adventure
-        subtitle: 📍 Jade Dragon Snow Mountain | ⏱️ 3 Days | From ¥1,580
-        text: Challenge yourself on one of the world's deepest river canyons.
+        title: Shangri-La Monkey Trip
+        tagline: Two Days | Tibetan Nature and Culture
+        subtitle: from $340 to $469 per person
+        text: >+
+          <div style="text-align: left">Explore Yunnan's natural wonders and
+          Tibetan cultural treasures! Spot rare, endangered monkeys, hike
+          stunning landscapes, and
+
+          discover local minority cultures. Learn about conservation, enjoy
+          authentic
+
+          experiences, and create unforgettable memories in China's beautiful
+
+          countryside.</div>
+
         image:
           type: ImageBlock
-          url: ''
-          altText: Tiger Leaping Gorge Expedition
+          url: /images/TC-Banner Icon.webp
+          altText: Shangri-La Monkey Trip Eco Tour Yunnan - Wildlife and Natur
+          elementId: ''
+          styles:
+            self:
+              borderRadius: x-large
         actions:
           - type: Button
             label: Learn More
-            url: ''
+            altText: ''
+            url: /shangri-la-monkey-trip-ecotour
+            showIcon: false
             icon: arrowRight
             iconPosition: right
             style: secondary
-        colors: bg-light-fg-dark
+            elementId: ''
+        colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
+            borderRadius: x-large
             flexDirection: col
             justifyContent: center
             textAlign: left
+            margin:
+              - ml-1
+              - mr-1
+    actions:
+      - type: Button
+        label: View All EcoTours
+        altText: ''
+        url: /ecotours
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+    elementId: ''
     variant: three-col-grid
-    colors: bg-light-fg-dark
+    colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pt-12
-          - pl-3
-          - pb-12
-          - pr-3
+          - pb-9
+          - pt-3
+          - pl-2
+          - pr-2
         justifyContent: center
+        margin:
+          - mt-0
       subtitle:
         textAlign: center
+        fontWeight: 700
   - type: DividerSection
     title: Divider
     elementId: ''
@@ -187,113 +273,103 @@ sections:
     styles:
       self:
         padding:
-          - pt-0
-          - pl-0
-          - pb-0
-          - pr-0
+          - pt-12
+          - pl-12
+          - pb-9
+          - pr-12
   - type: FeaturedItemsSection
     title:
       type: TitleBlock
-      text: Travel That Makes a Difference
-      color: text-light
+      text: Join Our EcoCamp
+      color: text-dark
       styles:
         self:
           textAlign: center
-    subtitle: We're committed to sustainable tourism that benefits both travelers and the environment.
+    subtitle: ''
     items:
       - type: FeaturedItem
-        title: Local Expertise
-        tagline: '🧭'
-        subtitle: Deep knowledge of Yunnan culture and hidden gems.
+        title: Sustainability Family EcoCamp
+        tagline: ''
+        subtitle: For Families with Kids over 5 Years Old
         text: ''
         image:
           type: ImageBlock
-          url: ''
-          altText: Local Expertise
-        colors: bg-primary-fg-light
+          url: /images/Family Camp Hero Icon.webp
+          altText: Sustainability Family EcoCamp Yunnan - Cloud Mountain
+          styles:
+            self:
+              borderRadius: x-large
+        actions:
+          - type: Button
+            label: Learn More
+            altText: ''
+            url: /Family-EcoCamps
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+        colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
+              - pt-3
+              - pl-3
+              - pb-3
+              - pr-3
+            borderRadius: x-large
             flexDirection: col
-            justifyContent: center
             textAlign: center
+            justifyContent: center
+            borderColor: border-dark
+            borderWidth: 0
+            borderStyle: solid
       - type: FeaturedItem
-        title: Certified Sustainable
-        tagline: '🌿'
-        subtitle: Verified eco-friendly practices.
+        title: Sustainability Leadership EcoCamp
+        tagline: ''
+        subtitle: For Middle and High School Students
         text: ''
         image:
           type: ImageBlock
-          url: ''
-          altText: Certified Sustainable
-        colors: bg-primary-fg-light
+          url: /images/Ledership Hero Icon2.webp
+          altText: Sustainability Leadership EcoCamp Yunnan - Student Program
+          styles:
+            self:
+              borderRadius: x-large
+        actions:
+          - type: Button
+            label: Learn More
+            altText: ''
+            url: /Student-EcoCamps
+            showIcon: false
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+        colors: bg-neutralAlt-fg-dark
         styles:
           self:
             padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
+              - pt-3
+              - pl-3
+              - pb-3
+              - pr-3
+            borderRadius: x-large
             flexDirection: col
-            justifyContent: center
             textAlign: center
-      - type: FeaturedItem
-        title: Community First
-        tagline: '👨‍👩‍👧'
-        subtitle: Supporting local families and cultures.
-        text: ''
-        image:
-          type: ImageBlock
-          url: ''
-          altText: Community First
-        colors: bg-primary-fg-light
-        styles:
-          self:
-            padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
-            flexDirection: col
             justifyContent: center
-            textAlign: center
-      - type: FeaturedItem
-        title: Safe & Trusted
-        tagline: '🛡️'
-        subtitle: Professional guides and safety standards.
-        text: ''
-        image:
-          type: ImageBlock
-          url: ''
-          altText: Safe & Trusted
-        colors: bg-primary-fg-light
-        styles:
-          self:
-            padding:
-              - pt-6
-              - pl-6
-              - pb-6
-              - pr-6
-            borderRadius: large
-            flexDirection: col
-            justifyContent: center
-            textAlign: center
-    variant: four-col-grid
-    colors: bg-primary-fg-light
+            borderColor: border-neutral
+            borderStyle: solid
+    actions: []
+    variant: two-col-grid
+    colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pt-12
-          - pl-3
-          - pb-12
-          - pr-3
+          - pt-5
+          - pl-2
+          - pb-3
+          - pr-2
         justifyContent: center
       subtitle:
         textAlign: center
@@ -309,7 +385,9 @@ sections:
           - pb-9
           - pr-12
   - title:
-      text: Travel Statistics
+      text: |-
+        Why
+        Choose Us
       color: text-dark
       styles:
         self:
@@ -437,10 +515,10 @@ sections:
         tagline: ''
         subtitle: ''
         text: >+
-          #### *“Through six days of close interaction, our kids have been
+          #### *"Through six days of close interaction, our kids have been
           exploring the rules of getting along with others while uncovering the
           mysteries of the world! Truly an experience with profound educational
-          value.”*
+          value."*
 
         image:
           altText: Maria Walters
@@ -466,7 +544,7 @@ sections:
         tagline: ''
         subtitle: ''
         text: >+
-          #### *"Lynne is so sweet and helpful. She’s very thoughtful, patient,
+          #### *"Lynne is so sweet and helpful. She's very thoughtful, patient,
           knowledgeable, and experienced in communicating with children."*
 
         image:
@@ -493,13 +571,9 @@ sections:
         tagline: ''
         subtitle: ''
         text: >+
-          #### *“Kids love Lukas, he is very rational, patient and kind. He is
+          #### *"Kids love Lukas, he is very rational, patient and kind. He is
           very knowledgeable in introducing local flora and fauna, highly
-          experienced, and familiar with the terrain.”*
-
-
-
-
+          experienced, and familiar with the terrain."*
 
         image:
           altText: Maria Walters
@@ -555,7 +629,7 @@ sections:
         subtitle: ''
         text: >+
           #### *"This is the second time coming to Yunnan to join ecotour with
-          Lukas and Lynne. The things we’ve seen here, the mountains, waters,
+          Lukas and Lynne. The things we've seen here, the mountains, waters,
           people, animals, and plants - have left an even deeper impression."*
 
         actions: []
@@ -588,30 +662,136 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Ready for Your Adventure?
+      text: Ready to Explore?
       color: text-dark
       styles:
         self:
           textAlign: center
-    subtitle: Book your sustainable travel experience today.
-    text: ''
+    subtitle: ''
+    text: |+
+      <div style="text-align: center">Get Started!</div>
+
     actions:
       - type: Button
-        label: Book Now
-        url: /contact-us
+        label: Choose a Private EcoTour
+        altText: ''
+        url: /ecotours
+        showIcon: false
         icon: arrowRight
         iconPosition: right
         style: primary
-    colors: bg-secondary-fg-dark
+        elementId: ''
+      - type: Button
+        label: Join a Family EcoCamp
+        altText: ''
+        url: /Family-EcoCamps
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+      - type: Button
+        label: Check a Student EcoCamp
+        altText: ''
+        url: /Student-EcoCamps
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+    badge:
+      type: Badge
+      label: ''
+      color: text-primary
+    colors: bg-light-fg-dark
     styles:
       self:
         alignItems: center
         justifyContent: center
         padding:
-          - pt-16
+          - pt-10
           - pb-16
-          - pl-3
-          - pr-3
+  - title:
+      text: Cloud Mountain
+      color: text-dark
+      type: TitleBlock
+    subtitle: Your Sustainable Travel Companion
+    text: >
+      We are dedicated to providing exceptional travel experiences that support
+      local communities and sustainable development in some of the most
+      vulnerable areas of Yunnan province, China. Learn more about our mission
+      and team.
+    actions:
+      - label: About Us
+        url: /about-us
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+        type: Button
+    media:
+      url: /images/About Us Banner OPT.webp
+      altText: Cloud Mountain Ecotours and Nature Education
+      type: ImageBlock
+    badge:
+      label: About Us
+      color: text-primary
+      type: Badge
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row-reverse
+        padding:
+          - pt-8
+          - pb-8
+          - pl-2
+          - pr-2
+        justifyContent: center
+    type: GenericSection
+  - title:
+      text: Inquiry and Booking
+      color: text-light
+      type: TitleBlock
+      styles:
+        self:
+          textAlign: center
+          fontWeight: 400
+    subtitle: We respond within one day!
+    text: |
+      Reach out for more details, special offers and customizations.
+    colors: bg-dark-fg-light
+    type: GenericSection
+    styles:
+      text:
+        textAlign: center
+      subtitle:
+        textAlign: center
+      self:
+        justifyContent: center
+        padding:
+          - pt-9
+          - pb-3
+    actions:
+      - type: Button
+        label: Contact Us
+        altText: ''
+        url: /contact-us
+        showIcon: false
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-dark-fg-light
+    styles:
+      self:
+        padding:
+          - pt-12
+          - pl-12
+          - pb-12
+          - pr-12
 seo:
   type: Seo
   socialImage: /images/CM Logo Color No Text.png

@@ -75,32 +75,13 @@ sections:
           - pl-4
           - pb-4
           - pr-4
-  - type: FeaturedItemsSection
-    title:
-      type: TitleBlock
-      text: Half-Day EcoTours
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-    subtitle: ''
+  - type: EcotourFilterSection
     items:
       - type: FeaturedItem
         title: Naxi Heritage Walk
         subtitle: from $48 to $68 per person
         text: >
-          Explore the magic of Lijiang's
-
-          Old Town, a UNESCO treasure. Discover ancient streets, vibrant
-          markets, and
-
-          tranquil parks with stunning views of Jade Dragon Snow Mountain.
-          Immerse yourself in rich local
-
-          culture, admire iconic landmarks, and taste delicious flavors.
-          Experience the
-
-          unforgettable beauty and history of this captivating destination.
+          Wander through a UNESCO World Heritage Site where ancient Naxi culture comes alive. Discover hidden courtyards, bustling markets, and panoramic mountain views on this immersive half-day journey.
         image:
           type: ImageBlock
           url: /images/DY-Banner Icon.webp
@@ -141,19 +122,7 @@ sections:
         text: >
           **SEASONAL (July to September)**
 
-          Discover Lijiang's hidden natural gem! Explore a protected area
-          teeming with rare orchids, unique plants, and
-
-          diverse wildlife. Hike with a local expert, discover Naxi culture, and
-          enjoy
-
-          breathtaking panoramic views of Lijiang and Jade Dragon Snow Mountain.
-          Finish
-
-          your adventure at the famous Black Dragon Pool Park. An easy escape
-          into
-
-          stunning nature!
+          Discover Lijiang's best-kept secret! A gentle hike through pristine wilderness teeming with rare orchids and wildlife, culminating in breathtaking views of Jade Dragon Snow Mountain.
         image:
           type: ImageBlock
           url: /images/XS-Banner Icon.webp
@@ -226,62 +195,11 @@ sections:
             margin:
               - ml-1
               - mr-1
-    actions: []
-    elementId: ''
-    variant: three-col-grid
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pb-7
-          - pt-4
-          - pl-1
-          - pr-1
-        justifyContent: center
-        margin:
-          - mt-0
-      subtitle:
-        textAlign: center
-        fontWeight: 700
-  - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-4
-          - pl-4
-          - pb-4
-          - pr-4
-  - type: FeaturedItemsSection
-    title:
-      type: TitleBlock
-      text: One-Day Ecotours
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-    subtitle: ''
-    items:
       - type: FeaturedItem
         title: Wenhai Sanctuary
         subtitle: from $192 to $242 per person
-        text: >+
-          <div style="text-align: left">Escape to Wenhai
-
-          Sanctuary and discover its hidden beauty. Explore pristine wetlands
-          with a
-
-          conservationist, observe unique alpine biodiversity, and immerse
-          yourself in
-
-          Naxi culture. Hike to Tiger Cave for stunning views and explore the
-          UNESCO heritage
-
-          of Baisha Village. An enriching eco-cultural adventure awaits in
-          Yunnan!</div>
-
+        text: >
+          Escape to a pristine alpine sanctuary most tourists never see. Trek through ancient villages, spot rare birds, and witness jaw-dropping vistas from Tiger Cave—all with expert local guides.
         image:
           type: ImageBlock
           url: /images/WH-Banner Icon.webp
@@ -319,20 +237,8 @@ sections:
       - type: FeaturedItem
         title: Living Waters of Lashi
         subtitle: from $199 to $251 per person
-        text: >+
-          Discover the wonders of Lashi Wetlands and the surrounding landscapes.
-          Explore vital ecosystems, learn
-
-          about conservation efforts, observe unique biodiversity, and immerse
-          yourself
-
-          in local Naxi and Yi cultures. Enjoy stunning cliff hikes and
-          authentic village
-
-          experiences, making it a memorable ecotour of Yunnan.
-
-
-
+        text: >
+          Experience Yunnan's most vital wetland ecosystem up close. Cliff hikes, rare bird sightings, and authentic village encounters await on this unforgettable day in nature.
         image:
           type: ImageBlock
           url: /images/LS-Banner Icon1.webp
@@ -371,15 +277,7 @@ sections:
         title: Hidden Jade Dragon
         subtitle: from $192 to $242 per person
         text: >
-          Escape the crowds on an
-
-          authentic Lijiang ecotour! Explore hidden temples, pristine wetlands
-          and secluded minority
-
-          villages. Hike with a ranger in the Jade Dragon Snow Mountain Nature
-          Reserve and
-
-          share a meal with the Yi people. An unforgettable adventure awaits!
+          Leave the tourist trails behind! Trek through sacred mountains, visit hidden villages, and share a traditional meal with local Yi families on this off-the-beaten-path adventure.
         image:
           type: ImageBlock
           url: /images/YL-Banner Icon 5.webp
@@ -414,66 +312,12 @@ sections:
               - ml-1
               - mr-1
         tagline: One Day | Off-the-beaten-path
-    actions: []
-    elementId: ''
-    variant: three-col-grid
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pb-7
-          - pt-8
-          - pl-1
-          - pr-1
-        justifyContent: center
-        margin:
-          - mt-0
-      subtitle:
-        textAlign: center
-        fontWeight: 700
-  - type: DividerSection
-    title: Divider
-    elementId: ''
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-4
-          - pl-4
-          - pb-4
-          - pr-4
-  - type: FeaturedItemsSection
-    title:
-      type: TitleBlock
-      text: Two-Three Day Ecotours
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-    subtitle: ''
-    items:
       - type: FeaturedItem
         title: Wild Heart of Lijiang
         tagline: Two Days | Deep Into Wilderness
         subtitle: from $313 to $458 per person
-        text: >+
-          Unleash your adventurous spirit in Laojun Mountains! Unveil stunning
-          landscapes, rare
-
-          birds, and unique minority cultures. Hike through pristine nature,
-          witness
-
-          iconic views of the Yangtze, and experience authentic local
-          traditions.
-
-          Discover China's wild beauty and contribute to responsible travel.
-
-
-
-
-
-
-
+        text: >
+          Dive deep into China's wild heart. Two days of pristine trails, rare wildlife, and authentic encounters with mountain communities await—far from the tourist crowds.
         image:
           type: ImageBlock
           url: /images/LJ-Banner Icon.webp
@@ -511,18 +355,8 @@ sections:
         title: Shangri-La Monkey Trip
         tagline: Two Days | Tibetan Nature and Culture
         subtitle: from $340 to $469 per person
-        text: >+
-          <div style="text-align: left">Explore Yunnan's natural wonders and
-          Tibetan cultural treasures! Spot rare, endangered monkeys, hike
-          stunning landscapes, and
-
-          discover local minority cultures. Learn about conservation, enjoy
-          authentic
-
-          experiences, and create unforgettable memories in China's beautiful
-
-          countryside.</div>
-
+        text: >
+          Track endangered Yunnan snub-nosed monkeys, explore Tibetan highlands, and sleep in a 400-year-old monastery. This two-day journey weaves wildlife conservation with authentic cultural immersion.
         image:
           type: ImageBlock
           url: /images/TC-Banner Icon.webp
@@ -560,7 +394,8 @@ sections:
         title: NatGeo's "Forever Walk"
         tagline: Three Days | Long Hike Experience
         subtitle: from $506 to $687 per person
-        text: "Relive \"Forever Walk: China\"! Join\_guides featured in the acclaimed National Geographic's documentary. Explore nature, culture, villages, following our path with Paul Salopek on his\_\"Out of Eden Walk\". Discover authentic Yunnan at a slow pace on this unique experience.\n"
+        text: >
+          Walk in the footsteps of National Geographic's Paul Salopek on this extraordinary three-day journey. Traverse remote villages, ancient trails, and timeless landscapes—slow travel at its most profound.
         image:
           type: ImageBlock
           url: /images/FW-Banner Icon.webp
@@ -594,23 +429,15 @@ sections:
             margin:
               - ml-1
               - mr-1
-    actions: []
-    elementId: ''
-    variant: three-col-grid
     colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
           - pb-7
-          - pt-8
+          - pt-4
           - pl-1
           - pr-1
         justifyContent: center
-        margin:
-          - mt-0
-      subtitle:
-        textAlign: center
-        fontWeight: 700
   - type: DividerSection
     title: Divider
     elementId: ''
