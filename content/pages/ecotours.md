@@ -15,7 +15,7 @@ sections:
       url: /images/Why Us Hero.webp
       altText: >-
         An international family enjoying a private ecotour with Cloud Mountain
-        in Lijiang and Shangri-La, Yunnan, China. 
+        in Lijiang and Shangri-La, Yunnan, China.
     colors: bg-light-fg-dark
     styles:
       self:
@@ -317,7 +317,7 @@ sections:
         tagline: Two Days | Deep Into Wilderness
         subtitle: from $313 to $458 per person
         text: >
-          Dive deep into China's wild heart. Two days of pristine trails, rare wildlife, and authentic encounters with mountain communities await—far from the tourist crowds.
+          Dive deep into Lijiang's wild heart. Two days of spectacular landscapes, pristine ancient forests, rare wildlife, and authentic encounters with mountain Lisu etnic group await — far from the tourist crowds.
         image:
           type: ImageBlock
           url: /images/LJ-Banner Icon.webp

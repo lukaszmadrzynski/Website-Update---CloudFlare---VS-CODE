@@ -7,6 +7,14 @@ import { seoGenerateTitle, seoGenerateMetaTags, seoGenerateMetaDescription } fro
 
 export default function DefaultBaseLayout(props) {
     const { page, site } = props;
+    
+    // Debug logging for development
+    if (process.env.NODE_ENV === 'development') {
+        console.log('[DefaultBaseLayout] site:', site);
+        console.log('[DefaultBaseLayout] header:', site?.header);
+        console.log('[DefaultBaseLayout] footer:', site?.footer);
+    }
+    
     const { enableAnnotations = true } = site;
     const pageMeta = page?.__metadata || {};
     let title = seoGenerateTitle(page, site);

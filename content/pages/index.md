@@ -9,7 +9,7 @@ sections:
     media:
       altText: >-
         Sustainable Ecotours and Nature Education in Yunnan Lijiang & Tibetan
-        Shangri-La | Cloud Mountain 
+        Shangri-La | Cloud Mountain
       elementId: ''
       type: ImageBlock
       url: /images/CM Hero OPTIMIZED.webp
@@ -58,27 +58,9 @@ sections:
       sustainable tourism, making a positive impact on visited destinations.
     actions:
       - type: Button
-        label: Private EcoTours
+        label: View Experiences
         altText: ''
         url: /ecotours
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-      - type: Button
-        label: Family EcoCamps
-        altText: ''
-        url: /Family-EcoCamps
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-      - type: Button
-        label: Student EcoCamps
-        altText: ''
-        url: /Student-EcoCamps
         showIcon: false
         icon: arrowRight
         iconPosition: right

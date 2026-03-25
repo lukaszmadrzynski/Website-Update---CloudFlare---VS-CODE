@@ -48,13 +48,22 @@ function readContent(file: string) {
             throw Error(`Unhandled file type: ${file}`);
     }
 
+    // Normalize file path to use forward slashes (for consistent lookups)
+    const normalizedId = file.replace(/\\/g, '/');
+
     // Make Sourcebit-compatible
     content.__metadata = {
         id: file,
+        normalizedId: normalizedId,
         modelName: content.type
     };
 
     return content;
+}
+
+// Helper function to normalize paths for lookup
+function normalizePath(p: string): string {
+    return p.replace(/\\/g, '/').replace(/^\/+/, '');
 }
 
 function resolveReferences(content, fileToContent) {
@@ -98,7 +107,19 @@ export function allContent() {
         return contentFilesInPath(dir).map((file) => readContent(file));
     });
     const objects = [...pages, ...data];
-    const fileToContent = Object.fromEntries(objects.map((e) => [e.__metadata.id, e]));
+    
+    // Create lookup maps with both original and normalized paths
+    const fileToContent: Record<string, any> = {};
+    const normalizedToContent: Record<string, any> = {};
+    
+    objects.forEach((e) => {
+        // Original path (as returned by glob)
+        fileToContent[e.__metadata.id] = e;
+        // Normalized path (forward slashes)
+        if (e.__metadata.normalizedId) {
+            normalizedToContent[e.__metadata.normalizedId] = e;
+        }
+    });
 
     objects.forEach((e) => resolveReferences(e, fileToContent));
 
@@ -107,5 +128,49 @@ export function allContent() {
     });
 
     const siteConfig = data.find((e) => e.__metadata.modelName === Config.name);
+    
+    // Manually resolve header and footer references if they're strings
+    // This is needed because the reference resolution doesn't handle string references for header/footer
+    if (siteConfig) {
+        // Try multiple path formats to find the match
+        const tryResolvePath = (refPath: string) => {
+            // Direct lookup with original path
+            if (fileToContent[refPath]) return fileToContent[refPath];
+            
+            // Normalize refPath (forward slashes, no leading slash)
+            const normalizedRef = normalizePath(refPath);
+            
+            // Try normalized version
+            if (normalizedToContent[normalizedRef]) return normalizedToContent[normalizedRef];
+            
+            // Try with original path's basename matched against normalized
+            const basename = path.basename(refPath);
+            for (const key of Object.keys(normalizedToContent)) {
+                if (key.endsWith('/' + basename) || key.endsWith('\\' + basename)) {
+                    return normalizedToContent[key];
+                }
+            }
+            
+            return null;
+        };
+        
+        if (typeof siteConfig.header === 'string') {
+            const headerFile = tryResolvePath(siteConfig.header);
+            if (headerFile) {
+                siteConfig.header = headerFile;
+            } else {
+                console.warn('[allContent] Could not resolve header:', siteConfig.header);
+            }
+        }
+        if (typeof siteConfig.footer === 'string') {
+            const footerFile = tryResolvePath(siteConfig.footer);
+            if (footerFile) {
+                siteConfig.footer = footerFile;
+            } else {
+                console.warn('[allContent] Could not resolve footer:', siteConfig.footer);
+            }
+        }
+    }
+    
     return { objects, pages, props: { site: siteConfig } };
 }
