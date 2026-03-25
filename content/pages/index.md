@@ -113,7 +113,7 @@ sections:
           Experience a private ecotour in Lijiang Old Town, immersing yourself
           in Naxi culture through historical sites, serene parks, and vibrant
           streets filled with local crafts, blending history, nature and culture
-          of this exeptional World Heritage Site.
+          of this exeptional UNESCO World Cultural Heritage Site.
         image:
           type: ImageBlock
           url: /images/DY-Banner Icon.webp
