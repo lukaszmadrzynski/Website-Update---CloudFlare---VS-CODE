@@ -36,31 +36,38 @@ export default function FormBlock(props) {
         setStatusMessage('');
 
         try {
-            const data = new FormData(formRef.current);
-            const formData = Object.fromEntries(data.entries());
+            const formData = new FormData(formRef.current);
             
-            // Send to Cloudflare Worker endpoint
+            // Log form data for debugging
+            console.log('Submitting form to Worker...');
+            for (let [key, value] of formData.entries()) {
+                console.log(`${key}: ${value}`);
+            }
+            
+            // Send to Cloudflare Worker endpoint as FormData
             const response = await fetch('https://contact-form.lukasz-madrzynski.workers.dev', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                body: formData,
             });
 
-            if (response.ok) {
+            console.log('Response status:', response.status);
+            const responseText = await response.text();
+            console.log('Response body:', responseText);
+
+            if (response.ok || response.status === 200) {
                 setSubmitStatus('success');
                 setStatusMessage('Thank you for your message! We will get back to you soon.');
-                // Reset form
                 if (formRef.current) {
                     formRef.current.reset();
                 }
             } else {
-                throw new Error('Failed to send message');
+                throw new Error(`Server error: ${response.status} - ${responseText}`);
             }
         } catch (error) {
+            console.error('Form submission error:', error);
             setSubmitStatus('error');
-            setStatusMessage('Sorry, there was an error sending your message. Please try again or contact us directly via email.');
+            const errorMsg = error instanceof Error ? error.message : 'Unknown error';
+            setStatusMessage(`Error: ${errorMsg}. Please try again or contact us directly via email.`);
         } finally {
             setIsSubmitting(false);
         }

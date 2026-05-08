@@ -40,15 +40,6 @@
             "type": "Link"
         },
         {
-            "label": "Blog",
-            "altText": "Cloud Mountain Blog - Travel Guides, Stories, News",
-            "url": "/blog",
-            "icon": "arrowRight",
-            "iconPosition": "right",
-            "style": "secondary",
-            "type": "Link"
-        },
-        {
             "label": "Contact Us",
             "altText": "Contact Us",
             "url": "/contact-us",

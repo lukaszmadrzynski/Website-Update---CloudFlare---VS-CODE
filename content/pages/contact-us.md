@@ -127,7 +127,7 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Send Us a Message
+      text: Or Send Us a Message Here
       color: text-dark
       styles:
         self:
@@ -180,13 +180,6 @@ sections:
           isRequired: true
           width: full
           type: EmailFormControl
-        - name: tourName
-          label: Tour Interest (Optional)
-          hideLabel: true
-          placeholder: Interested Tour (e.g., Shangri-La Monkey Trip)
-          isRequired: false
-          width: full
-          type: TextFormControl
         - name: message
           label: Message
           hideLabel: true
