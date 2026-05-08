@@ -11,6 +11,11 @@ export default function FormBlock(props) {
 
     // Get tour name from URL query parameter
     const tourNameFromUrl = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('tour') : null;
+    
+    // State for form submission
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+    const [statusMessage, setStatusMessage] = React.useState('');
 
     if (fields.length === 0) {
         return null;
@@ -24,12 +29,41 @@ export default function FormBlock(props) {
         return field;
     });
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+        setStatusMessage('');
 
-        const data = new FormData(formRef.current);
-        const value = Object.fromEntries(data.entries());
-        alert(`Form data: ${JSON.stringify(value)}`);
+        try {
+            const data = new FormData(formRef.current);
+            const formData = Object.fromEntries(data.entries());
+            
+            // Send to Cloudflare Worker endpoint
+            const response = await fetch('https://contact-form.lukasz-madrzynski.workers.dev', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setStatusMessage('Thank you for your message! We will get back to you soon.');
+                // Reset form
+                if (formRef.current) {
+                    formRef.current.reset();
+                }
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+            setStatusMessage('Sorry, there was an error sending your message. Please try again or contact us directly via email.');
+        } finally {
+            setIsSubmitting(false);
+        }
     }
 
     return (
@@ -75,7 +109,23 @@ export default function FormBlock(props) {
             </div>
             {submitButton && (
                 <div className={classNames('mt-8', 'flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}>
-                    <SubmitButtonFormControl {...submitButton} {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} />
+                    <SubmitButtonFormControl 
+                        {...submitButton} 
+                        disabled={isSubmitting}
+                        {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} 
+                    />
+                </div>
+            )}
+            
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-center">
+                    {statusMessage}
+                </div>
+            )}
+            {submitStatus === 'error' && (
+                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-center">
+                    {statusMessage}
                 </div>
             )}
         </form>

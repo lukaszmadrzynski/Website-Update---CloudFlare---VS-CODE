@@ -127,6 +127,123 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
+      text: Send Us a Message
+      color: text-dark
+      styles:
+        self:
+          textAlign: center
+    subtitle: ''
+    text: "<div style=\"text-align: center\">Fill out the form below and we will get back to you within 24 hours.</div>\n"
+    actions: []
+    media:
+      type: ImageBlock
+      altText: Fun feature preview
+    badge:
+      type: Badge
+      label: Get in Touch
+      color: text-primary
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        justifyContent: center
+        flexDirection: col
+        padding:
+          - pt-6
+          - pl-6
+          - pb-2
+          - pr-6
+      subtitle:
+        textAlign: center
+  - type: GenericSection
+    title:
+      type: TitleBlock
+      text: ''
+      color: text-dark
+    subtitle: ''
+    text: ''
+    actions: []
+    media:
+      type: FormBlock
+      fields:
+        - name: name
+          label: Name
+          hideLabel: true
+          placeholder: Your Name
+          isRequired: true
+          width: full
+          type: TextFormControl
+        - name: email
+          label: Email
+          hideLabel: true
+          placeholder: Your Email
+          isRequired: true
+          width: full
+          type: EmailFormControl
+        - name: tourName
+          label: Tour Interest (Optional)
+          hideLabel: true
+          placeholder: Interested Tour (e.g., Shangri-La Monkey Trip)
+          isRequired: false
+          width: full
+          type: TextFormControl
+        - name: message
+          label: Message
+          hideLabel: true
+          placeholder: Tell us about your travel plans, group size, preferred dates, and any questions you have...
+          isRequired: true
+          width: full
+          type: TextareaFormControl
+      submitButton:
+        label: Send Message
+        showIcon: true
+        icon: send
+        iconPosition: right
+        style: primary
+        elementId: null
+        type: SubmitButtonFormControl
+      elementId: contact-form
+      styles:
+        self:
+          padding:
+            - pt-4
+            - pb-4
+            - pl-4
+            - pr-4
+          borderColor: border-neutral
+          borderStyle: solid
+          borderWidth: 1
+          borderRadius: large
+          maxWidth: mx-w-xl
+          margin:
+            - ml-auto
+            - mr-auto
+    badge:
+      type: Badge
+      label: ''
+      color: text-primary
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        justifyContent: center
+        padding:
+          - pt-2
+          - pb-8
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-3
+          - pl-9
+          - pb-3
+          - pr-9
+  - type: GenericSection
+    title:
+      type: TitleBlock
       text: Follow Our Adventures
       color: text-dark
       styles:
