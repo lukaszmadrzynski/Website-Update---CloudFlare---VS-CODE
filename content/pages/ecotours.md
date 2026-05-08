@@ -320,7 +320,7 @@ sections:
         tagline: Two Days | Tibetan Nature and Culture
         subtitle: from $340 to $469 per person
         text: >
-          Track endangered Yunnan snub-nosed monkeys, explore Tibetan highlands, and sleep in a 400-year-old monastery. This two-day journey weaves wildlife conservation with authentic cultural immersion.
+          Observe endangered Yunnan snub-nosed monkeys in their natural habitat, explore Tibetan highlands and meet friendly locals. This two-day journey weaves wildlife conservation with authentic cultural immersion.
         image:
           type: ImageBlock
           url: /images/TC-Banner Icon.webp
