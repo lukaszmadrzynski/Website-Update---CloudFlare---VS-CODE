@@ -10,18 +10,28 @@ export default function PostLayout(props) {
     const { page, site } = props;
     const BaseLayout = getBaseLayoutComponent(page.baseLayout, site.baseLayout);
     const { enableAnnotations = true } = site;
-    const { title, date, author, markdown_content, bottomSections = [] } = page;
+    const { title, date, author, markdown_content, bottomSections = [], featuredImage } = page;
     const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
     const formattedDate = dayjs(date).format('MMMM D, YYYY');
 
     return (
         <BaseLayout page={page} site={site}>
             <main id="main" className="sb-layout sb-post-layout">
-                <article className="px-4 py-16 sm:py-28">
-                    <div className="max-w-screen-2xl mx-auto">
-                        <header className="max-w-4xl mx-auto mb-12 text-center">
-                            <h1 {...(enableAnnotations && { 'data-sb-field-path': 'title' })}>{title}</h1>
-                            <div className="text-sm uppercase mt-4">
+                {featuredImage && (
+                    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden mb-0" style={{ minHeight: '50vh' }}>
+                        <img
+                            src={featuredImage.url}
+                            alt={featuredImage.altText || ''}
+                            className="w-full object-cover"
+                            style={{ minHeight: '50vh', maxHeight: '65vh' }}
+                        />
+                    </div>
+                )}
+                <article className="bg-light-fg-dark px-4 sm:px-8 py-12 sm:py-16">
+                    <div className="max-w-screen-xl mx-auto">
+                        <header className="max-w-3xl mx-auto mb-12 sm:mb-16 text-center">
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-semibold leading-tight" {...(enableAnnotations && { 'data-sb-field-path': 'title' })}>{title}</h1>
+                            <div className="text-xs sm:text-sm uppercase tracking-wider mt-4 sm:mt-6 text-gray-500">
                                 <time dateTime={dateTimeAttr} {...(enableAnnotations && { 'data-sb-field-path': 'date' })}>
                                     {formattedDate}
                                 </time>
@@ -36,7 +46,7 @@ export default function PostLayout(props) {
                         {markdown_content && (
                             <Markdown
                                 options={{ forceBlock: true }}
-                                className="sb-markdown max-w-3xl mx-auto"
+                                className="sb-markdown max-w-3xl mx-auto text-base sm:text-lg leading-relaxed"
                                 {...(enableAnnotations && { 'data-sb-field-path': 'markdown_content' })}
                             >
                                 {markdown_content}

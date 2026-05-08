@@ -2,7 +2,7 @@ import * as React from 'react';
 import classNames from 'classnames';
 
 export default function TextFormControl(props) {
-    const { name, label, hideLabel, isRequired, placeholder, width = 'full' } = props;
+    const { name, label, hideLabel, isRequired, placeholder, width = 'full', defaultValue = '' } = props;
     const fieldPath = props['data-sb-field-path'];
     const labelId = `${name}-label`;
     const attr: React.InputHTMLAttributes<HTMLInputElement> = {};
@@ -15,6 +15,9 @@ export default function TextFormControl(props) {
     if (placeholder) {
         attr.placeholder = placeholder;
     }
+    if (defaultValue) {
+        attr.defaultValue = defaultValue;
+    }
 
     return (
         <div
@@ -26,11 +29,12 @@ export default function TextFormControl(props) {
             {label && (
                 <label
                     id={labelId}
-                    className={classNames('sb-label', 'inline-block', 'sm:mb-1.5', { 'sr-only': hideLabel })}
+                    className={classNames('sb-label', 'inline-block', 'sm:mb-1.5', 'font-bold', { 'sr-only': hideLabel })}
                     htmlFor={name}
                     {...(fieldPath && { 'data-sb-field-path': '.label .name#@for' })}
                 >
                     {label}
+                    {isRequired && <span className="text-primary ml-1">*</span>}
                 </label>
             )}
             <input

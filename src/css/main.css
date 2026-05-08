@@ -3,9 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
+
 @layer base {
     body {
-        @apply text-base;
+        @apply text-lg;
     }
     h1,
     .h1,
@@ -23,6 +27,11 @@
 }
 
 @layer components {
+    /* Scroll margin for anchor links to account for fixed header */
+    [id] {
+        scroll-margin-top: 0px;
+    }
+
     .sb-markdown {
         @apply leading-relaxed;
         a {
@@ -323,4 +332,59 @@
             transform: translate3d(0,0,0)
         }
     }
+}
+
+/* Swiper Carousel Custom Styles */
+.swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Blog Index Page Image Styles - Rounded Corners */
+.sb-post-thumbnail img,
+.post-thumbnail img,
+article img,
+.bg-light-fg-dark img,
+.sb-image img,
+.featured-post-card img,
+.recent-post-card img {
+    border-radius: 0.75rem;
+}
+
+/* Blog post cards grid images */
+.sb-card img,
+.sb-post-card img {
+    border-radius: 0.75rem;
+}
+
+/* Featured section images */
+.featured-posts-section img,
+.FeaturedPostsSection img {
+    border-radius: 0.75rem;
+}
+
+/* Recent posts carousel images */
+.recent-posts-section img,
+.RecentPostsSection img {
+    border-radius: 0.75rem;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
+}
+
+.swiper-pagination-bullet {
+    background: #166534;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #166534;
 }

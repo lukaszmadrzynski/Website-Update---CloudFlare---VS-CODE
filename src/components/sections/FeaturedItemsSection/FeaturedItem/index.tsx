@@ -4,148 +4,113 @@ import Markdown from 'markdown-to-jsx';
 
 import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles-to-class-names';
 import Action from '../../../atoms/Action';
-import ImageBlock from '../../../blocks/ImageBlock';
 
 export default function FeaturedItem(props) {
     const { elementId, title, tagline, subtitle, text, image, actions = [], colors = 'bg-light-fg-dark', styles = {}, hasSectionTitle } = props;
     const fieldPath = props['data-sb-field-path'];
     const TitleTag = hasSectionTitle ? 'h3' : 'h2';
-    const flexDirection = styles?.self?.flexDirection ?? 'col';
-    const hasTextContent = !!(tagline || title || subtitle || text || actions.length > 0);
-    const hasImage = !!image?.url;
+    
+    const hasImage = !!(image?.url || image?.altText);
 
-    // Get the first action URL for whole-card click
-    const firstActionUrl = actions?.[0]?.url;
-    const firstActionLabel = actions?.[0]?.label;
+    // Check if this is a testimonial
+    const isTestimonial = !!(tagline && subtitle && text && image?.altText && !image?.url);
 
-    const cardContent = (
+    // Card classes - basic styling without hover effects or outlines
+    const cardClasses = classNames(
+        'sb-card',
+        colors,
+        styles?.self?.margin ? mapStyles({ margin: styles?.self?.margin }) : undefined,
+        styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : 'p-4',
+        styles?.self?.borderRadius ? mapStyles({ borderRadius: styles?.self?.borderRadius }) : 'rounded-lg',
+        styles?.self?.textAlign ? mapStyles({ textAlign: styles?.self?.textAlign }) : undefined,
+        'overflow-hidden',
+        'relative',
+        'h-full',
+        'flex',
+        'flex-col'
+    );
+
+    return (
         <div
             id={elementId}
-            className={classNames(
-                'sb-card',
-                colors,
-                styles?.self?.margin ? mapStyles({ margin: styles?.self?.margin }) : undefined,
-                styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : undefined,
-                styles?.self?.borderWidth && styles?.self?.borderWidth !== 0 && styles?.self?.borderStyle !== 'none'
-                    ? mapStyles({
-                          borderWidth: styles?.self?.borderWidth,
-                          borderStyle: styles?.self?.borderStyle,
-                          borderColor: styles?.self?.borderColor ?? 'border-primary'
-                      })
-                    : undefined,
-                styles?.self?.borderRadius ? mapStyles({ borderRadius: styles?.self?.borderRadius }) : undefined,
-                styles?.self?.textAlign ? mapStyles({ textAlign: styles?.self?.textAlign }) : undefined,
-                'overflow-hidden',
-                'transition-all duration-300',
-                'hover:-translate-y-1.5 hover:shadow-xl',
-                firstActionUrl ? 'cursor-pointer' : undefined
-            )}
+            className={cardClasses}
             data-sb-field-path={fieldPath}
         >
-            <div className={classNames('w-full', 'flex', mapFlexDirectionStyles(flexDirection, hasTextContent, hasImage), 'gap-6')}>
-                {hasImage && (
-                    <ImageBlock
-                        {...image}
-                        className={classNames('flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }), {
-                            'xs:w-[28.4%] xs:shrink-0': hasTextContent && (flexDirection === 'row' || flexDirection === 'row-reversed')
-                        })}
-                        {...(fieldPath && { 'data-sb-field-path': '.image' })}
+            {/* Image on top */}
+            {hasImage && !isTestimonial && image.url && (
+                <div className="mb-4 flex-shrink-0 relative z-10 overflow-hidden rounded-lg group">
+                    <img
+                        src={image.url}
+                        alt={image.altText || ''}
+                        className="w-full h-auto object-cover block transition-transform duration-500 group-hover:scale-110"
+                        style={{ maxWidth: '100%', display: 'block' }}
                     />
+                </div>
+            )}
+
+            {/* Text content below */}
+            <div className="flex flex-col flex-1 relative z-10">
+                {tagline && !isTestimonial && (
+                    <p className="text-xs text-primary font-medium" {...(fieldPath && { 'data-sb-field-path': '.tagline' })}>
+                        {tagline}
+                    </p>
                 )}
-                {hasTextContent && (
-                    <div
-                        className={classNames('w-full', {
-                            'xs:grow': hasImage && (flexDirection === 'row' || flexDirection === 'row-reversed')
+                {title && (
+                    <TitleTag
+                        className={classNames('text-xl font-semibold', {
+                            'mt-1': tagline
                         })}
+                        {...(fieldPath && { 'data-sb-field-path': '.title' })}
                     >
-                        {tagline && (
-                            <p className="text-sm" {...(fieldPath && { 'data-sb-field-path': '.tagline' })}>
-                                {tagline}
-                            </p>
-                        )}
-                        {title && (
-                            <TitleTag
-                                className={classNames('h3', {
-                                    'mt-2': tagline
-                                })}
-                                {...(fieldPath && { 'data-sb-field-path': '.title' })}
-                            >
-                                {title}
-                            </TitleTag>
-                        )}
-                        {subtitle && (
-                            <p
-                                className={classNames('text-lg', {
-                                    'mt-2': tagline || title
-                                })}
-                                {...(fieldPath && { 'data-sb-field-path': '.subtitle' })}
-                            >
-                                {subtitle}
-                            </p>
-                        )}
-                        {text && (
-                            <Markdown
-                                options={{ forceBlock: true, forceWrapper: true }}
-                                className={classNames('sb-markdown', {
-                                    'mt-4': tagline || title || subtitle
-                                })}
-                                {...(fieldPath && { 'data-sb-field-path': '.text' })}
-                            >
-                                {text}
-                            </Markdown>
-                        )}
-                        {actions.length > 0 && firstActionUrl && (
-                            <div
-                                className={classNames(
-                                    'flex',
-                                    'flex-wrap',
-                                    mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }),
-                                    'items-center',
-                                    'gap-4',
-                                    {
-                                        'mt-6': tagline || title || subtitle || text
-                                    }
-                                )}
-                                {...(fieldPath && { 'data-sb-field-path': '.actions' })}
-                            >
-                                <span className="text-primary-700 dark:text-primary-300 font-medium">
-                                    View more &rarr;
-                                </span>
-                            </div>
-                        )}
+                        {title}
+                    </TitleTag>
+                )}
+                {subtitle && !isTestimonial && (
+                    <p
+                        className={classNames('text-sm', {
+                            'mt-1': tagline || title
+                        })}
+                        {...(fieldPath && { 'data-sb-field-path': '.subtitle' })}
+                    >
+                        {subtitle}
+                    </p>
+                )}
+                {text && (
+                    <div
+                        className={classNames('text-base text-neutral-600 mt-3', {
+                            'mt-3': tagline || title || subtitle
+                        })}
+                        {...(fieldPath && { 'data-sb-field-path': '.text' })}
+                    >
+                        <Markdown>{text}</Markdown>
+                    </div>
+                )}
+                {isTestimonial && (
+                    <div className="mt-4 pt-4 border-t border-gray-200 flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-full bg-green-700 flex items-center justify-center text-white text-xl font-semibold overflow-hidden border-2 border-green-200 flex-shrink-0">
+                            {image.altText.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                            <p className="font-semibold text-gray-900">{image?.altText}</p>
+                            <p className="text-sm text-gray-500">{subtitle} | {tagline}</p>
+                        </div>
+                    </div>
+                )}
+                {actions.length > 0 && (
+                    <div
+                        className="mt-4 w-full flex justify-center"
+                        {...(fieldPath && { 'data-sb-field-path': '.actions' })}
+                    >
+                        {actions.map((action, actionIndex) => (
+                            <Action
+                                key={actionIndex}
+                                {...action}
+                                className="text-sm"
+                            />
+                        ))}
                     </div>
                 )}
             </div>
         </div>
     );
-
-    // Wrap the entire card in an anchor tag if there's a URL
-    if (firstActionUrl) {
-        return (
-            <a
-                href={firstActionUrl}
-                className="block no-underline"
-                {...(fieldPath && { 'data-sb-field-path': fieldPath })}
-            >
-                {cardContent}
-            </a>
-        );
-    }
-
-    return cardContent;
-}
-
-function mapFlexDirectionStyles(flexDirection: string, hasTextContent: boolean, hasImage: boolean) {
-    switch (flexDirection) {
-        case 'row':
-            return hasTextContent && hasImage ? 'flex-col xs:flex-row xs:items-start' : 'flex-col';
-        case 'row-reverse':
-            return hasTextContent && hasImage ? 'flex-col xs:flex-row-reverse xs:items-start' : 'flex-col';
-        case 'col':
-            return 'flex-col';
-        case 'col-reverse':
-            return 'flex-col-reverse';
-        default:
-            return null;
-    }
 }

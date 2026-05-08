@@ -56,7 +56,7 @@ export default function EcotourFilterSection(props) {
         return [{ label: currentGroup?.label || null, items: filteredItems }];
     }, [items, filteredItems, activeFilter]);
 
-    const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
 
     return (
         <Section
@@ -97,7 +97,7 @@ export default function EcotourFilterSection(props) {
                             )}
                             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
                                 {group.items.map((item, index) => (
-                                    <FeaturedItem
+                                    <EcotourCard
                                         key={index}
                                         {...item}
                                         hasSectionTitle={false}

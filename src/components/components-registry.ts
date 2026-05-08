@@ -33,8 +33,10 @@ export function getComponent(key: string): ComponentType {
 const components = {
     AutoCompletePosts: dynamic(() => import('./blocks/SearchBlock/AutoCompletePosts')),
     CarouselSection: dynamic(() => import('./sections/CarouselSection')),
+    TestimonialsSection: dynamic(() => import('./sections/TestimonialsSection')),
     CheckboxFormControl: dynamic(() => import('./blocks/FormBlock/CheckboxFormControl')),
     DividerSection: dynamic(() => import('./sections/DividerSection')),
+    EcotourCard: dynamic(() => import('./sections/FeaturedItemsSection/EcotourCard')),
     EcotourFilterSection: dynamic(() => import('./sections/EcotourFilterSection')),
     EmailFormControl: dynamic(() => import('./blocks/FormBlock/EmailFormControl')),
     FeaturedItem: dynamic(() => import('./sections/FeaturedItemsSection/FeaturedItem')),
@@ -56,5 +58,6 @@ const components = {
     PageLayout: dynamic(() => import('./layouts/PageLayout')),
     PostLayout: dynamic(() => import('./layouts/PostLayout')),
     PostFeedLayout: dynamic(() => import('./layouts/PostFeedLayout')),
-    PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout'))
+    PostFeedCategoryLayout: dynamic(() => import('./layouts/PostFeedCategoryLayout')),
+    TripAdvisorReviews: dynamic(() => import('./sections/TripAdvisorReviews'))
 };

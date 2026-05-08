@@ -9,7 +9,7 @@ import { Action, Badge } from '../../atoms';
 import TitleBlock from '../../blocks/TitleBlock';
 
 export default function FeaturedItemsSection(props) {
-    const { elementId, colors, backgroundImage, badge, title, subtitle, items = [], actions = [], variant, styles = {}, enableAnnotations } = props;
+    const { elementId, colors, backgroundImage, badge, title, subtitle, text, items = [], actions = [], variant, styles = {}, enableAnnotations } = props;
     return (
         <Section
             elementId={elementId}
@@ -43,6 +43,22 @@ export default function FeaturedItemsSection(props) {
                         {...(enableAnnotations && { 'data-sb-field-path': '.subtitle' })}
                     >
                         {subtitle}
+                    </p>
+                )}
+                {text && (
+                    <p
+                        className={classNames(
+                            'w-full',
+                            'max-w-sectionBody',
+                            'text-base',
+                            'text-center',
+                            {
+                                'mt-4': badge?.label || title?.text || subtitle
+                            }
+                        )}
+                        {...(enableAnnotations && { 'data-sb-field-path': '.text' })}
+                    >
+                        {text}
                     </p>
                 )}
                 <FeaturedItemVariants
@@ -79,6 +95,10 @@ function FeaturedItemVariants(props) {
     switch (variant) {
         case 'two-col-grid':
             return <FeaturedItemsTwoColGrid {...rest} />;
+        case 'four-col-grid':
+            return <FeaturedItemsFourColGrid {...rest} />;
+        case 'five-col-grid':
+            return <FeaturedItemsFiveColGrid {...rest} />;
         case 'small-list':
             return <FeaturedItemsSmallList {...rest} />;
         case 'big-list':
@@ -96,14 +116,18 @@ function FeaturedItemsThreeColGrid(props) {
         return null;
     }
     const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
     return (
         <div
             className={classNames('w-full', 'grid', 'gap-10', 'sm:grid-cols-2', 'lg:grid-cols-3', { 'mt-12': hasTopMargin })}
             {...(hasAnnotations && { 'data-sb-field-path': '.items' })}
         >
-            {items.map((item, index) => (
-                <FeaturedItem key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
-            ))}
+            {items.map((item, index) => {
+                const CardComponent = item.type === 'EcotourCard' ? EcotourCard : FeaturedItem;
+                return (
+                    <CardComponent key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                );
+            })}
         </div>
     );
 }
@@ -114,14 +138,62 @@ function FeaturedItemsTwoColGrid(props) {
         return null;
     }
     const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
     return (
         <div
-            className={classNames('w-full', 'grid', 'gap-10', 'sm:grid-cols-2', { 'mt-12': hasTopMargin })}
+            className={classNames('w-full', 'grid', 'gap-6', 'sm:grid-cols-2', { 'mt-12': hasTopMargin })}
             {...(hasAnnotations && { 'data-sb-field-path': '.items' })}
         >
-            {items.map((item, index) => (
-                <FeaturedItem key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
-            ))}
+            {items.map((item, index) => {
+                const CardComponent = item.type === 'EcotourCard' ? EcotourCard : FeaturedItem;
+                return (
+                    <CardComponent key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                );
+            })}
+        </div>
+    );
+}
+
+function FeaturedItemsFourColGrid(props) {
+    const { items = [], hasTopMargin, hasSectionTitle, hasAnnotations } = props;
+    if (items.length === 0) {
+        return null;
+    }
+    const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
+    return (
+        <div
+            className={classNames('w-full', 'grid', 'gap-6', 'sm:grid-cols-2', 'lg:grid-cols-4', { 'mt-12': hasTopMargin })}
+            {...(hasAnnotations && { 'data-sb-field-path': '.items' })}
+        >
+            {items.map((item, index) => {
+                const CardComponent = item.type === 'EcotourCard' ? EcotourCard : FeaturedItem;
+                return (
+                    <CardComponent key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                );
+            })}
+        </div>
+    );
+}
+
+function FeaturedItemsFiveColGrid(props) {
+    const { items = [], hasTopMargin, hasSectionTitle, hasAnnotations } = props;
+    if (items.length === 0) {
+        return null;
+    }
+    const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
+    return (
+        <div
+            className={classNames('w-full', 'grid', 'gap-4', 'sm:grid-cols-2', 'md:grid-cols-3', 'lg:grid-cols-5', { 'mt-12': hasTopMargin })}
+            {...(hasAnnotations && { 'data-sb-field-path': '.items' })}
+        >
+            {items.map((item, index) => {
+                const CardComponent = item.type === 'EcotourCard' ? EcotourCard : FeaturedItem;
+                return (
+                    <CardComponent key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                );
+            })}
         </div>
     );
 }
@@ -132,14 +204,18 @@ function FeaturedItemsSmallList(props) {
         return null;
     }
     const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
     return (
         <div
             className={classNames('w-full', 'max-w-3xl', 'grid', 'gap-10', { 'mt-12': hasTopMargin })}
             {...(hasAnnotations && { 'data-sb-field-path': '.items' })}
         >
-            {items.map((item, index) => (
-                <FeaturedItem key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
-            ))}
+            {items.map((item, index) => {
+                const CardComponent = item.type === 'EcotourCard' ? EcotourCard : FeaturedItem;
+                return (
+                    <CardComponent key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                );
+            })}
         </div>
     );
 }
@@ -150,11 +226,15 @@ function FeaturedItemsBigList(props) {
         return null;
     }
     const FeaturedItem = getComponent('FeaturedItem');
+    const EcotourCard = getComponent('EcotourCard');
     return (
         <div className={classNames('w-full', 'grid', 'gap-10', { 'mt-12': hasTopMargin })} {...(hasAnnotations && { 'data-sb-field-path': '.items' })}>
-            {items.map((item, index) => (
-                <FeaturedItem key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
-            ))}
+            {items.map((item, index) => {
+                const CardComponent = item.type === 'EcotourCard' ? EcotourCard : FeaturedItem;
+                return (
+                    <CardComponent key={index} {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                );
+            })}
         </div>
     );
 }

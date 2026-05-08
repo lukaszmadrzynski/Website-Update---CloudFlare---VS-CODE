@@ -26,11 +26,12 @@ export default function EmailFormControl(props) {
             {label && (
                 <label
                     id={labelId}
-                    className={classNames('sb-label', 'inline-block', 'sm:mb-1.5', { 'sr-only': hideLabel })}
+                    className={classNames('sb-label', 'inline-block', 'sm:mb-1.5', 'font-bold', { 'sr-only': hideLabel })}
                     htmlFor={name}
                     {...(fieldPath && { 'data-sb-field-path': '.label .name#@for' })}
                 >
                     {label}
+                    {isRequired && <span className="text-primary ml-1">*</span>}
                 </label>
             )}
             <input

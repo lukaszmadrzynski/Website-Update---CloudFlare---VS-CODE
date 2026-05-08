@@ -25,14 +25,16 @@ export default function PostFeedLayout(props) {
                     </h1>
                 )}
                 {renderSections(topSections, 'topSections', enableAnnotations)}
-                <PostFeedSection
-                    {...postFeed}
-                    posts={items}
-                    pageLinks={pageLinks}
-                    searchBox={searchBox}
-                    enableAnnotations={enableAnnotations}
-                    {...(enableAnnotations && { 'data-sb-field-path': 'postFeed' })}
-                />
+                {postFeed && (
+                    <PostFeedSection
+                        {...postFeed}
+                        posts={items}
+                        pageLinks={pageLinks}
+                        searchBox={searchBox}
+                        enableAnnotations={enableAnnotations}
+                        {...(enableAnnotations && { 'data-sb-field-path': 'postFeed' })}
+                    />
+                )}
                 {renderSections(bottomSections, 'bottomSections', enableAnnotations)}
             </main>
         </BaseLayout>

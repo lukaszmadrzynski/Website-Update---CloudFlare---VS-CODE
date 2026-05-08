@@ -1,9 +1,9 @@
 {
-    "name": "Rhonda Piper",
-    "role": "Job title",
+    "name": "Cloud Mountain",
+    "role": "Author",
     "image": {
         "url": "/images/avatar1.svg",
-        "altText": "Rhonda Piper",
+        "altText": "Cloud Mountain",
         "styles": {
             "self": {
                 "borderRadius": "medium",

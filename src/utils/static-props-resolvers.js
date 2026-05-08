@@ -83,8 +83,23 @@ const StaticPropsResolvers = {
             posts: recentPosts
         };
     },
-    FeaturedPostsSection: (props, data, debugContext) => {
-        return resolveReferences(props, ['posts.author', 'posts.category'], data.objects, debugContext);
+    FeaturedPostsSection: (props, data) => {
+        // Get all posts and filter by isFeatured
+        let allPosts = getAllPostsSorted(data.objects);
+        if (!process.env.stackbitPreview) {
+            allPosts = allPosts.filter(isPublished);
+        }
+        // Take only isFeatured posts (or first 2 if none are featured)
+        let featuredPosts = allPosts.filter(post => post.isFeatured === true);
+        if (featuredPosts.length === 0) {
+            featuredPosts = allPosts.slice(0, 2);
+        }
+        const resolvedPosts = resolveReferences(featuredPosts, ['author', 'category'], data.objects);
+        
+        return {
+            ...props,
+            posts: resolvedPosts
+        };
     },
     FeaturedPeopleSection: (props, data, debugContext) => {
         return resolveReferences(props, ['people'], data.objects, debugContext);

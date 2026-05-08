@@ -115,7 +115,14 @@ export function findObjectById(objectId, objects, debugContext) {
     if (!objectId) {
         return null;
     }
-    const object = objects.find((object) => object.__metadata?.id === objectId) || null;
+    // Normalize the objectId to use forward slashes
+    const normalizedObjectId = objectId.replace(/\\/g, '/');
+    
+    // Try to find the object with both original and normalized paths
+    const object = objects.find((object) => {
+        const objectIdToMatch = object.__metadata?.id?.replace(/\\/g, '/');
+        return objectIdToMatch === normalizedObjectId;
+    }) || null;
     if (!object && debugContext) {
         const reverseStack = debugContext.stack.slice().reverse();
         const objectIndex = reverseStack.findIndex((object) => !!object.__metadata?.relProjectPath);

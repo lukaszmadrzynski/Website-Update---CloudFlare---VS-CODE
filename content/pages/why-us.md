@@ -1,6 +1,6 @@
 ---
 type: PageLayout
-title: Why Us
+title: About Cloud Mountain
 sections:
   - type: GenericSection
     title:
@@ -12,10 +12,11 @@ sections:
     actions: []
     media:
       type: ImageBlock
-      url: /images/About Us Banner.webp
-      altText: >-
-        Cloud Mountain Ecotours, Sustainable Travel and Nature Edcuation in
-        Lijiang and Shangri-La, Yunnan, China.
+      url: /images/About Us Hero.webp
+      altText: About Us Banner
+      styles:
+        self:
+          borderRadius: x-large
     badge:
       type: Badge
       label: ''
@@ -24,24 +25,35 @@ sections:
     styles:
       self:
         alignItems: center
-        flexDirection: col-reverse
+        flexDirection: row-reverse
         padding:
           - pt-0
-          - pb-2
+          - pl-0
+          - pb-0
+          - pr-0
         justifyContent: center
+        margin:
+          - ml-0
+          - mr-0
+          - mt-0
+          - mb-0
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Why Choose Cloud Mountain?
+      text: Cloud Mountain
       color: text-dark
       styles:
         self:
           textAlign: center
-    subtitle: >-
-      Discover the difference of traveling with a passionate, locally-rooted
-      team committed to sustainable travel in Yunnan, China, in the captivating
-      regions of Lijiang and Shangri-La.
-    text: ''
+    subtitle: Your Trusted Partner for Ecotourism, Education and Sustainability in Yunnan
+    text: >+
+      <div style="text-align: center">Cloud Mountain emerged from a shared
+      passion for the unparalleled natural beauty and rich cultural tapestry of
+      Northwest Yunnan, China. Co-founders Lynne Lyu and Lukasz Madrzynski
+      envisioned a company that not only offered unforgettable educational
+      travel experiences but also championed sustainable practices and fostered
+      genuine connections with local communities.</div>
+
     actions: []
     media:
       type: ImageBlock
@@ -53,13 +65,13 @@ sections:
     colors: bg-light-fg-dark
     styles:
       self:
-        alignItems: center
+        alignItems: flex-start
         justifyContent: center
         padding:
-          - pt-5
+          - pt-10
           - pl-3
           - pr-3
-          - pb-8
+          - pb-12
       subtitle:
         textAlign: center
   - type: DividerSection
@@ -69,36 +81,40 @@ sections:
     styles:
       self:
         padding:
-          - pt-4
+          - pt-8
           - pl-4
-          - pb-4
+          - pb-8
           - pr-4
   - type: FeaturedItemsSection
+    elementId: meet-the-founders
     title:
       type: TitleBlock
-      text: Led by Experienced & Passionate Team
+      text: Meet the Founders
       color: text-primary
       styles:
         self:
           textAlign: center
-    subtitle: >-
-      Cloud Mountain was co-founded by Lynne Lyu and Lukas Madrzynski, a
-      dedicated team with deep roots in Yunnan and a proven track record in
-      sustainable development.
+    subtitle: Discover the passionate team behind Cloud Mountain
     items:
       - type: FeaturedItem
         title: Lynne Lyu
         tagline: ''
-        subtitle: ''
+        subtitle: Co-founder & Culture Immersion Expert
         text: >
-          Lynne's deep connection to Yunnan, her involvement with the Lijiang
-          Conservation and Development Association, and her passion for cultural
-          preservation ensure our tours are culturally sensitive and contribute
-          to the well-being of local communities. She brings invaluable local
-          insights to your China travel adventure.
+          Deputy General Secretary at Lijiang Conservation and Development
+          Association, Deputy Chief Editor of Lijiang Wenhai Ecotourism
+          Guidebook and Lijiang Laojun Mountains Climate Change Brochure. 
+          Graduated from Anqing Normal University with Bachelor of Arts in Art
+          Design. Completed nature education course certified by China Nature
+          Education Network. Former Chief Editor at Enjoy Cambodia expat
+          magazine, English and Art Teacher at Lijiang Voice in Nature Education
+          Co. Ltd., Founder of Lynne玲 Art Studio. Lynne's deep connection to
+          Yunnan and her passion for cultural discovery and preservation ensure our programs are
+          culturally sensitive and contribute to the well-being of local
+          communities.
         image:
           type: ImageBlock
-          url: /images/Lynne3.webp
+          url: /images/Lynne2.webp
           altText: Lynne Lyu - Cofounder of Lijiang Cloud Mountain Education
           styles:
             self:
@@ -108,25 +124,31 @@ sections:
         styles:
           self:
             padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
             borderRadius: x-large
             flexDirection: col
       - type: FeaturedItem
         title: Lukasz Madrzynski
         tagline: ''
-        subtitle: ''
+        subtitle: Co-founder & Nature Immersion Expert
         text: >
-          With his extensive background in environmental science and sustainable
-          development (UNEP-Tongji IESD), and his work with organizations like
-          UNESCO-WHITRAP and the IUCN, Lukasz brings a wealth of knowledge and a
-          strong commitment to conservation to every tour. His expertise ensures
-          your China travel experience is both enriching and responsible.
+          Master's and PhD research at UNEP-Tongji Institute of Environment for
+          Sustainable Development. Bachelor's degree in Chinese Studies at
+          Warsaw University, Poland. Member of the IUCN Commission on Education
+          and Communication. Heritage Conservation Practitioner at
+          UNESCO-WHITRAP. Senior Consultant at Lijiang Conservation
+          and Development Association. 2024 IUCN-CEC Asia Award Winner.
+          Recipient of Lijiang Municipality Senior Talents Service Green Card. With
+          his extensive background in environmental science and sustainable
+          development, and his work with organizations like UNESCO-WHITRAP and
+          the IUCN CEC, Lukasz brings a wealth of knowledge and commitment
+          to conservation to every program.
         image:
           type: ImageBlock
-          url: /images/Lukas3.webp
+          url: /images/Lukas2.webp
           altText: Lukasz Madrzynski - Cofounder of Lijiang Cloud Mountain Education
           styles:
             self:
@@ -136,51 +158,22 @@ sections:
         styles:
           self:
             padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
-            borderRadius: x-large
-            flexDirection: col
-      - type: FeaturedItem
-        title: Local Guides
-        tagline: ''
-        subtitle: ''
-        text: >
-          Our local expert guides aren't just tour leaders; they are
-          storytellers, conservation advocates, and passionate locals from the
-          heart of Northwest Yunnan. They possess an unparalleled understanding
-          of the environment, culture, and history of the regions you'll explore
-          in China, particularly in Lijiang and Shangri-La. Their insights
-          transform your trip from a visit to a genuine connection.
-        image:
-          type: ImageBlock
-          url: /images/Guides 2.webp
-          altText: Local Guides working with Lijiang Cloud Mountain Ecotours
-          styles:
-            self:
-              borderRadius: x-large
-        actions: []
-        colors: bg-light-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
             borderRadius: x-large
             flexDirection: col
     actions: []
-    variant: three-col-grid
+    variant: two-col-grid
     colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pt-4
-          - pl-8
-          - pb-4
-          - pr-8
+          - pt-6
+          - pl-6
+          - pb-6
+          - pr-6
         justifyContent: center
       subtitle:
         textAlign: center
@@ -191,11 +184,65 @@ sections:
     styles:
       self:
         padding:
-          - pt-4
+          - pt-8
           - pl-4
-          - pb-4
+          - pb-8
+          - pr-4
+  - type: GenericSection
+    elementId: our-local-partners
+    title:
+      type: TitleBlock
+      text: Our Local Partners
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+    subtitle: Passionate storytellers from the heart of Northwest Yunnan
+    text: >
+      We are immensely proud of the strong relationships we've built with local
+      communities and organizations throughout Yunnan, China. These partnerships
+      are crucial to the authenticity and positive impact of our operations. By
+      collaborating with local guides, guesthouses, and community initiatives in
+      destinations like Lijiang and Shangri-La, we ensure that your travel
+      experience directly supports the people who call this remarkable region
+      home.
+    media:
+      type: ImageBlock
+      url: /images/Guides-4.webp
+      altText: Local partners and community guides
+      styles:
+        self:
+          borderRadius: x-large
+          width: full
+    actions: []
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: col
+        padding:
+          - pt-6
+          - pl-6
+          - pb-6
+          - pr-6
+        justifyContent: center
+      subtitle:
+        textAlign: center
+      text:
+        textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-8
+          - pl-4
+          - pb-8
           - pr-4
   - type: FeaturedItemsSection
+    elementId: why-choose-us
     title:
       type: TitleBlock
       text: Key Reasons to Choose Us
@@ -203,28 +250,22 @@ sections:
       styles:
         self:
           textAlign: center
-    subtitle: >-
-      Our Core Difference: Passion, Expertise, and Sustainability in China
-      Travel. At Cloud Mountain, we believe your journey, should be more than
-      just a sightseeing trip. It should be an immersive experience that
-      connects you deeply with the nature, the culture, and the people, while
-      contributing positively to their well-being.
+    subtitle: 'Our Core Difference: Passion, Expertise, and Sustainability.'
+    text: 'We believe your journey should be more than just a sightseeing trip. It should be an immersive experience that connects you deeply with the nature, the culture, and the people, while contributing positively to their well-being.'
     items:
       - type: FeaturedItem
         title: Small Groups
         tagline: ''
         subtitle: ''
         text: >
-          We prioritize small groups on our private ecotours and join-in
-          ecocamps. This fosters a more intimate and personalized experience,
+          We prioritize small groups on our programs. This fosters a more intimate and personalized experience,
           allowing for deeper engagement with your surroundings and the local
           people. It also minimizes our impact on the delicate ecosystems of
           Yunnan and the Tibetan areas within China.
         image:
           type: ImageBlock
           url: /images/Private.webp
-          altText: >-
-            An international family enjoying a provate ecotour with Lijiang
+          altText: An international family enjoying a private ecotour with Lijiang
             Cloud Mountain.
           styles:
             self:
@@ -237,22 +278,25 @@ sections:
         styles:
           self:
             padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
+              - pt-4
+              - pl-2
+              - pb-4
+              - pr-4
             borderRadius: x-large
             flexDirection: col
       - type: FeaturedItem
         title: Handcrafted Itineraries
         tagline: ''
         subtitle: ''
-        text: "Our\_Yunnan itineraries\_are carefully designed to showcase the best of\_Northwest Yunnan and China, including off-te-beaten-track destinations and unique cultural encounters. We prioritize quality and authentic experiences for your\_travel in China.\n"
+        text: >
+          Our Yunnan itineraries are carefully designed to showcase the best of
+          Northwest Yunnan and China, including off-the-beaten-track destinations
+          and unique cultural encounters. We prioritize quality and authentic
+          experiences over mass tourism destinations.
         image:
           type: ImageBlock
           url: /images/Handcrafted.jpg
-          altText: >-
-            Kids and Parents visit authentic minority villages on hadcrafted
+          altText: Kids and Parents visit authentic minority villages on handcrafted
             ecotours in Lijiang, Yunnan, China.
           styles:
             self:
@@ -262,22 +306,25 @@ sections:
         styles:
           self:
             padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
             borderRadius: x-large
             flexDirection: col
       - type: FeaturedItem
         title: Sustainable Travel
         tagline: ''
         subtitle: ''
-        text: "We are deeply committed to minimizing our environmental footprint and maximizing our positive impact on local communities throughout\_Yunnan and China. We promote ethical and\_sustainable tourism practices\_in all our\_travel destinations.\n"
+        text: >
+          We are deeply committed to minimizing our environmental footprint and
+          maximizing our positive impact on local communities and nature throughout Yunnan
+          province. We promote ethical and sustainable tourism practices in all of
+          our travel destinations.
         image:
           type: ImageBlock
           url: /images/Sustainable.webp
-          altText: >-
-            A family with teenage kid helping to protect nature in Lijiang,
+          altText: A family with teenage kid helping to protect nature in Lijiang,
             Yunnan, China.
           styles:
             self:
@@ -287,10 +334,10 @@ sections:
         styles:
           self:
             padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
             borderRadius: x-large
             flexDirection: col
       - type: FeaturedItem
@@ -300,14 +347,13 @@ sections:
         text: >
           Our programs go beyond the typical tourist trails, offering genuine
           interactions with local communities in Yunnan, including the rich
-          Tibetan culture of Shangri-La. You'll have opportunities to learn
-          about traditions, witness daily life, and gain a deeper appreciation
-          for the diverse cultures of China.
+          Tibetan culture of Shangri-La. You'll have opportunities to learn about
+          traditions, witness daily life, and gain a deeper appreciation for the
+          diverse cultures of China.
         image:
           type: ImageBlock
           url: /images/Immersion4.webp
-          altText: >-
-            An international traveller interactng with a local musican on an
+          altText: An international traveller interacting with a local musician on an
             authentic ecotourism experience in Yunnan's minority village.
           styles:
             self:
@@ -317,27 +363,115 @@ sections:
         styles:
           self:
             padding:
-              - pt-3
-              - pl-3
-              - pb-3
-              - pr-3
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
             borderRadius: x-large
             flexDirection: col
       - type: FeaturedItem
-        title: Contributing to Real Conservation Efforts
+        title: Contributing to Real Conservation
         tagline: ''
         subtitle: ''
         text: >
-          Our team's experience in designing and implementing UNDP-GEF-SGP
-          projects in Northwest Yunnan demonstrates our commitment to
-          on-the-ground conservation. When you travel with us, you're supporting
-          a company actively involved in protecting the natural beauty of China.
+          Our team's experience in designing and implementing UNDP-GEF-SGP projects
+          in Northwest Yunnan demonstrates our commitment to on-the-ground
+          conservation. When you travel with us, you're supporting a company
+          actively involved in protecting the natural beauty of Yunnan province and China at large.
         image:
           type: ImageBlock
           url: /images/Contributing3.webp
-          altText: >-
-            Group photos of nature conservation and sustainable development
+          altText: Group photos of nature conservation and sustainable development
             projects in Yunnan that Cloud Mountain team was contributing in.
+          styles:
+            self:
+              borderRadius: x-large
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
+            borderRadius: x-large
+            flexDirection: col
+      - type: FeaturedItem
+        title: Trusted and Recognized
+        tagline: ''
+        subtitle: ''
+        text: >
+          Our commitment to quality and sustainability has earned us recognition
+          from major domestic and international organizations, including IUCN and
+          UNESCO as well as various Chinese and Western media outlets, including CCTV, National
+          Geographic, and Discovery Channel.
+        image:
+          type: ImageBlock
+          url: /images/Recognized.webp
+          altText: Media reports and documentaries that showcase Cloud Mountain
+            engagement in conservation and sustainability of Lijiang, Yunnan, China.
+          styles:
+            self:
+              borderRadius: x-large
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-4
+              - pl-4
+              - pb-4
+              - pr-4
+            borderRadius: x-large
+            flexDirection: col
+    actions: []
+    variant: three-col-grid
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-10
+          - pl-4
+          - pb-10
+          - pr-4
+        justifyContent: center
+      subtitle:
+        textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-8
+          - pl-4
+          - pb-8
+          - pr-4
+  - type: FeaturedItemsSection
+    elementId: sustainability-commitment
+    title:
+      type: TitleBlock
+      text: Our Commitment to Sustainable Travel
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+    subtitle: 'Sustainability is the bedrock of everything we do.'
+    text: 'We are deeply committed to responsible tourism practices and believe that travel is not only an opportunity to learn and grow but also to contribute towards sustainable development in visited areas.'
+    items:
+      - type: FeaturedItem
+        title: Engaging in Nature Conservation
+        tagline: ''
+        subtitle: ''
+        text: >
+          We carefully plan our itineraries and encourage responsible behavior and proactive actions to
+          protect the natural beauty of destinations around Lijiang and Shangri-La.
+        image:
+          type: ImageBlock
+          url: /images/Minimizing.webp
+          altText: Placeholder image
           styles:
             self:
               borderRadius: x-large
@@ -353,21 +487,42 @@ sections:
             borderRadius: x-large
             flexDirection: col
       - type: FeaturedItem
-        title: Trusted and Recognized
+        title: Supporting Local Communities
         tagline: ''
         subtitle: ''
         text: >
-          Our commitment to quality and sustainability has earned us recognition
-          from major domestic and international organizations, including IUCN
-          and UNESCO as well as various media outlets, including CCTV, National
-          Geographic, and Discovery Channel. 
+          We partner with local businesses, employ local guides, and ensure that
+          our ecotours directly benefit the people and economies of the regions we
+          visit in China.
         image:
           type: ImageBlock
-          url: /images/Recognized.webp
-          altText: >-
-            Media reports and documentaries that showcase Cloud Mountain
-            engagement in conservation and sustainability of Lijiang, Yunnan,
-            China.
+          url: /images/Supporting.webp
+          altText: Placeholder image
+          styles:
+            self:
+              borderRadius: x-large
+        actions: []
+        colors: bg-light-fg-dark
+        styles:
+          self:
+            padding:
+              - pt-3
+              - pl-3
+              - pb-3
+              - pr-3
+            borderRadius: x-large
+            flexDirection: col
+      - type: FeaturedItem
+        title: Promoting Cultural Preservation
+        tagline: ''
+        subtitle: ''
+        text: >
+          We strive to create meaningful interactions that respect and celebrate
+          the diverse cultures and intangible heritage of Yunnan province.
+        image:
+          type: ImageBlock
+          url: /images/Culture.webp
+          altText: Placeholder image
           styles:
             self:
               borderRadius: x-large
@@ -388,13 +543,24 @@ sections:
     styles:
       self:
         padding:
-          - pt-6
-          - pl-3
+          - pt-10
+          - pl-4
           - pb-10
-          - pr-3
+          - pr-4
         justifyContent: center
       subtitle:
         textAlign: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-8
+          - pl-4
+          - pb-8
+          - pr-4
   - type: GenericSection
     title:
       type: TitleBlock
@@ -406,9 +572,10 @@ sections:
     media:
       type: ImageBlock
       url: /images/exclusive.webp
-      altText: >-
-        Breathtaking landscapes of nature and ethnic villages in Lijiang,
-        Yunnan, Province, China.
+      altText: Authentic Natural and Cultural Experiences in Lijiang & Shangrila, Yunnan
+      styles:
+        self:
+          borderRadius: x-large
     badge:
       type: Badge
       label: ''
@@ -419,12 +586,13 @@ sections:
         alignItems: center
         flexDirection: col-reverse
         padding:
-          - pt-0
+          - pt-8
         justifyContent: center
   - type: GenericSection
+    elementId: exclusive-insights
     title:
       type: TitleBlock
-      text: |-
+      text: |
         Exclusive
         Insights
       color: text-dark
@@ -436,7 +604,7 @@ sections:
       <div style="text-align: center">Don't just see Yunnan – experience it from
       the inside. Our
 
-      ecotours and ecocamps take you directly into the very places where we have
+      programs take you directly into the very places where we have
       been actively
 
       working on conservation and sustainable development. Witness our projects
@@ -466,9 +634,10 @@ sections:
         alignItems: center
         flexDirection: col-reverse
         padding:
-          - pt-4
+          - pt-8
           - pl-3
           - pr-3
+          - pb-12
         justifyContent: center
       subtitle:
         textAlign: center
@@ -481,24 +650,181 @@ sections:
         padding:
           - pt-8
           - pl-4
-          - pb-4
+          - pb-8
+          - pr-4
+  - type: GenericSection
+    elementId: sustainability-action
+    title:
+      type: TitleBlock
+      text: Sustainable Development in Action
+      color: text-dark
+    subtitle: ''
+    text: >
+      Our Team has been actively involved in the design and implementation of
+      UNDP-GEF-SGP projects in Northwest Yunnan, including the"Community Wetland
+      and Forest Conservation Project in Wenhai, Lijiang", the "Comprehensive
+      Demonstration Project of Renewable Energy in Liju Village Community in
+      Three Parallel Rivers Area"as well as other government and non-government
+      funded projects including the"Community Conservation Project in Lashihai",
+      "Environmental Education Workshop for Primary School Teachers in Shitou
+      Bai Minority Autonomous Township", "Environmental Education and Ecotourism
+      Training for the Staff of Baima Snow Mountain Nature Reserve in Shangrila
+      Tibetan Autonomous Prefecture", "Public Nature Education Lectures at
+      Lijiang Municipal Library" and many other sustainability related projects
+      in the region of Northwest Yunnan.
+    actions: []
+    media:
+      type: ImageBlock
+      url: /images/Sustainability2-.webp
+      altText: Dope design preview
+      styles:
+        self:
+          borderRadius: x-large
+    badge:
+      type: Badge
+      label: Our Expertise
+      color: text-primary
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: col
+        justifyContent: center
+        padding:
+          - pb-6
+          - pt-10
+          - pl-3
+          - pr-3
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-8
+          - pl-4
+          - pb-8
+          - pr-4
+  - type: GenericSection
+    elementId: partnerships
+    title:
+      type: TitleBlock
+      text: Collaboration & Partnerships
+      color: text-dark
+    subtitle: ''
+    text: >
+      Throughout the years, our team has established deep involvement with the
+      local communities, organizations and institutions in Northwest Yunnan, and
+      has earned both recognition and trust. We have actively cooperated and built
+      relationships with wide range of stakeholders including nature reserves,
+      national parks, forestry and conservation bureaus, NGOs and village
+      committees across our project sites.
+    actions: []
+    media:
+      type: ImageBlock
+      url: /images/Collaboration.webp
+      altText: Dope design preview
+      styles:
+        self:
+          borderRadius: x-large
+    badge:
+      type: Badge
+      label: Multi-Stakeholders
+      color: text-primary
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row-reverse
+        padding:
+          - pt-10
+          - pb-10
+          - pl-3
+          - pr-3
+      text:
+        textAlign: justify
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-8
+          - pl-4
+          - pb-8
+          - pr-4
+  - type: GenericSection
+    elementId: outreach-recognition
+    title:
+      type: TitleBlock
+      text: Outreach & Recognition
+      color: text-dark
+    subtitle: ''
+    text: >
+      We believe that showcasing our work and experiences can contribute to
+      sustainable development not only in Yunnan but also in other parts of the
+      world. Cloud Mountain is honored to be an official partner of the IUCN Task
+      Force on Nature Education and a member of the global #natureforall initiative.
+      Throughout the years, our commitment and achievements have garnered
+      considerable recognition and have been widely reported by major domestic
+      and international media outlets, including CCTV, National Geographic and
+      Discovery Channel.
+    actions: []
+    media:
+      type: ImageBlock
+      url: /images/Outreach.webp
+      altText: Dope design preview
+      styles:
+        self:
+          borderRadius: x-large
+    badge:
+      type: Badge
+      label: Media Exposure
+      color: text-primary
+    colors: bg-light-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: col
+        padding:
+          - pb-12
+          - pt-10
+          - pl-3
+          - pr-3
+        justifyContent: center
+  - type: DividerSection
+    title: Divider
+    elementId: ''
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-8
+          - pl-4
+          - pb-8
           - pr-4
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Join Us!
+      text: Ready to Meet Us on Your Yunnan EcoJourney?
       color: text-dark
       styles:
         self:
           textAlign: center
     subtitle: ''
     text: >+
-      <div style="text-align: center">Start your exclusive, insider journey
-      now.</div>
+      <div style="text-align: center">Join us on a journey that respects the
+      environment, celebrates local cultures, and creates unforgettable
+      memories. Explore the wonders of Yunnan with Us!
+
+
+      </div>
 
     actions:
       - type: Button
-        label: Private Ecotours
+        label: Private EcoTours
         altText: ''
         url: /ecotours
         showIcon: false
@@ -507,22 +833,13 @@ sections:
         style: primary
         elementId: ''
       - type: Button
-        label: Family Camp
+        label: Partner with Us
         altText: ''
-        url: /Family-EcoCamps
+        url: /partner-with-us
         showIcon: false
         icon: arrowRight
         iconPosition: right
-        style: primary
-        elementId: ''
-      - type: Button
-        label: Student Camp
-        altText: ''
-        url: /Student-EcoCamps
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
+        style: secondary
         elementId: ''
     badge:
       type: Badge
@@ -534,8 +851,10 @@ sections:
         alignItems: center
         justifyContent: center
         padding:
-          - pt-12
-          - pb-14
+          - pb-16
+          - pt-8
+          - pl-3
+          - pr-3
   - type: GenericSection
     title:
       type: TitleBlock
@@ -545,9 +864,9 @@ sections:
         self:
           textAlign: center
           fontWeight: 400
-    subtitle: We respond within one day!
+    subtitle: ''
     text: |
-      Reach out for more details, special offers and customizations.
+      Contact Us to Discuss Your Travel Plans. We respond within one day!
     actions:
       - type: Button
         label: Contact Us
@@ -567,31 +886,27 @@ sections:
       self:
         justifyContent: center
         padding:
-          - pt-8
-          - pb-4
-          - pl-3
-          - pr-3
+          - pt-14
+          - pb-14
 slug: /why-us
 isDraft: false
 seo:
   type: Seo
-  metaTitle: Why Choose Our Yunnan Ecotours? Expert Guides & Sustainable China Travel
-  metaDescription: >-
-    Discover why Cloud Mountain is the best choice for your Yunnan ecotour and
-    nature education camps in China. Learn about our expert local guides,
-    commitment to sustainable travel, and authentic cultural experiences in
-    Lijiang and Shangri-La.
+  metaTitle: >-
+    About Cloud Mountain: Your Trusted Partner for Ecotourism and Nature Education
+    in Yunnan, China.
+  metaDescription: >
+    Learn about Cloud Mountain: Your trusted partner for Yunnan travel and ecotours in
+    China. Learn about our founders, expert local guides, and authentic natural
+    and cultural experiences in Lijiang and Shangri-La.
   addTitleSuffix: true
   socialImage: /images/CM Logo Color No Text.png
   metaTags:
     - type: MetaTag
-      content: >-
-        yunnan ecotours best, sustainable travel china, expert guides yunnan,
-        small group tours china, authentic cultural experiences yunnan, lijiang
-        shangri-la ecotours, Nature education, china summer camps, Yunnan winter
-        family camps, Lijiang nature education programms, Student sustainability
-        leadership camps. Cloud Mountain, Authentic Yunnan Tours, Responsible
-        Tourism Yunnan, Ethical Travel Yunnan, Eco-tours Yunnan, Small Group
-        Tours Yunnan, Local Guides Yunnan, Conservation Tours Yunnan, Community
-        Based Tourism  Yunnan, Yunnan Cultural Tours
+      content: >
+        about us cloud mountain ecotours, cloud mountain founders, lukas
+        madrzynski, lynne lyu, sustainable travel yunnan, responsible tourism
+        china, lijiang ecotours, shangri-la tours, our story, our mission, why
+        choose cloud mountain, yunnan ecotours best, small group tours china,
+        authentic cultural experiences yunnan
 ---

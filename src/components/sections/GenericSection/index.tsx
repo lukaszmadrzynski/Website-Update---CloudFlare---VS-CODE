@@ -64,15 +64,14 @@ export default function GenericSection(props) {
                             </p>
                         )}
                         {text && (
-                            <Markdown
-                                options={{ forceBlock: true, forceWrapper: true }}
-                                className={classNames('sb-markdown', 'sm:text-lg', styles?.text ? mapStyles(styles?.text) : undefined, {
+                            <div
+                                className={classNames('sb-markdown', 'text-base', styles?.text ? mapStyles(styles?.text) : undefined, {
                                     'mt-6': badge?.label || title?.text || subtitle
                                 })}
                                 {...(enableAnnotations && { 'data-sb-field-path': '.text' })}
                             >
-                                {text}
-                            </Markdown>
+                                <Markdown>{text}</Markdown>
+                            </div>
                         )}
                         {actions.length > 0 && (
                             <div

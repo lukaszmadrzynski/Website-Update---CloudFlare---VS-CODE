@@ -19,41 +19,11 @@
             "iconPosition": "right",
             "style": "secondary",
             "type": "Link",
-            "altText": "Cloud Mountain Ecotours Page"
-        },
-        {
-            "type": "SubNav",
-            "label": "EcoCamps",
-            "altText": "",
-            "links": [
-                {
-                    "type": "Link",
-                    "label": "For Families",
-                    "altText": "",
-                    "url": "/Family-EcoCamps",
-                    "showIcon": false,
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "elementId": ""
-                },
-                {
-                    "type": "Link",
-                    "label": "For Students",
-                    "altText": "",
-                    "url": "/Student-EcoCamps",
-                    "showIcon": false,
-                    "icon": "arrowRight",
-                    "iconPosition": "right",
-                    "style": "secondary",
-                    "elementId": ""
-                }
-            ],
-            "labelStyle": "secondary"
+            "altText": "Cloud Mountain EcoTours"
         },
         {
             "label": "Why Us",
-            "altText": "Why Us page",
+            "altText": "Why Us - Our Story, Team, Impact",
             "url": "/why-us",
             "icon": "arrowRight",
             "iconPosition": "right",
@@ -61,27 +31,40 @@
             "type": "Link"
         },
         {
-            "type": "Link",
-            "label": "About Us",
-            "altText": "About Us page",
-            "url": "/about-us",
-            "showIcon": false,
+            "label": "Partner With Us",
+            "altText": "Partner With Us",
+            "url": "/partner-with-us",
             "icon": "arrowRight",
             "iconPosition": "right",
             "style": "secondary",
-            "elementId": ""
+            "type": "Link"
+        },
+        {
+            "label": "Blog",
+            "altText": "Cloud Mountain Blog - Travel Guides, Stories, News",
+            "url": "/blog",
+            "icon": "arrowRight",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "Contact Us",
+            "altText": "Contact Us",
+            "url": "/contact-us",
+            "icon": "mail",
+            "iconPosition": "right",
+            "style": "secondary",
+            "type": "Link"
         }
     ],
     "secondaryLinks": [
         {
-            "label": "Contact Us",
-            "url": "/contact-us",
-            "icon": "mail",
-            "iconPosition": "right",
+            "label": "Book Now!",
+            "altText": "Book Now - Reserve Your EcoTour",
+            "url": "/book",
             "style": "primary",
-            "type": "Button",
-            "showIcon": false,
-            "altText": "Contact Us page"
+            "type": "Button"
         }
     ],
     "variant": "logo-left-primary-nav-left",

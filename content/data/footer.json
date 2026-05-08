@@ -6,10 +6,11 @@
     },
     "text": "",
     "primaryLinks": {
+        "type": "FooterLinksGroup",
         "title": "",
         "links": [
             {
-                "label": "Private Ecotours",
+                "label": "EcoTours",
                 "altText": "Ecotours page",
                 "url": "/ecotours",
                 "icon": "arrowRight",
@@ -18,32 +19,55 @@
                 "type": "Link"
             },
             {
-                "label": "Family EcoCamps",
-                "url": "/Family-EcoCamps",
+                "type": "Link",
+                "label": "Why Us",
+                "altText": "",
+                "url": "/why-us",
+                "showIcon": false,
                 "icon": "arrowRight",
                 "iconPosition": "right",
                 "style": "secondary",
-                "type": "Link",
-                "altText": ""
+                "elementId": ""
             },
             {
                 "type": "Link",
-                "label": "Student EcoCamps",
+                "label": "Partner With Us",
                 "altText": "",
-                "url": "/Student-EcoCamps",
+                "url": "/partner-with-us",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "elementId": ""
+            },
+            {
+                "type": "Link",
+                "label": "Blog",
+                "altText": "",
+                "url": "/blog",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "style": "secondary",
+                "elementId": ""
+            },
+            {
+                "type": "Link",
+                "label": "Contact Us",
+                "altText": "",
+                "url": "/contact-us",
                 "showIcon": false,
                 "icon": "arrowRight",
                 "iconPosition": "right",
                 "style": "secondary",
                 "elementId": ""
             }
-        ],
-        "type": "FooterLinksGroup"
+        ]
     },
     "socialLinks": [
         {
             "altText": "Instagram link",
-            "url": "https://www.instagram.com/cloud.mountain.sustainability/",
+            "url": "https://www.instagram.com/cloud.mountain.ecotours/",
             "icon": "instagram",
             "type": "Social"
         },
@@ -71,40 +95,6 @@
     "secondaryLinks": {
         "type": "FooterLinksGroup",
         "title": "",
-        "links": [
-            {
-                "type": "Link",
-                "label": "Why Us",
-                "altText": "",
-                "url": "/why-us",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "style": "secondary",
-                "elementId": ""
-            },
-            {
-                "type": "Link",
-                "label": "About Us",
-                "altText": "",
-                "url": "/about-us",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "style": "secondary",
-                "elementId": ""
-            },
-            {
-                "type": "Link",
-                "label": "Contact Us",
-                "altText": "",
-                "url": "/contact-us",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "style": "secondary",
-                "elementId": ""
-            }
-        ]
+        "links": []
     }
 }

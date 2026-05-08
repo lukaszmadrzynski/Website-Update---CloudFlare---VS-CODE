@@ -9,9 +9,20 @@ export default function FormBlock(props) {
     const formRef = React.createRef<HTMLFormElement>();
     const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath } = props;
 
+    // Get tour name from URL query parameter
+    const tourNameFromUrl = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('tour') : null;
+
     if (fields.length === 0) {
         return null;
     }
+
+    // Update fields with prefilled value if tour name is in URL
+    const updatedFields = fields.map(field => {
+        if (field.name === 'tourName' && tourNameFromUrl) {
+            return { ...field, defaultValue: decodeURIComponent(tourNameFromUrl) };
+        }
+        return field;
+    });
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -50,7 +61,7 @@ export default function FormBlock(props) {
                 {...(fieldPath && { 'data-sb-field-path': '.fields' })}
             >
                 <input type="hidden" name="form-name" value={elementId} />
-                {fields.map((field, index) => {
+                {updatedFields.map((field, index) => {
                     const modelName = field.__metadata.modelName;
                     if (!modelName) {
                         throw new Error(`form field does not have the 'modelName' property`);

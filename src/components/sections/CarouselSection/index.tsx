@@ -84,34 +84,45 @@ function CarouselVariants(props) {
 function CarouselWithNavigation({ items = [], hasTopMargin, hasSectionTitle, hasAnnotations }) {
     const FeaturedItem = getComponent('FeaturedItem');
     const [swiperRef, setSwiperRef] = React.useState<SwiperClass>();
+    const [isPaused, setIsPaused] = React.useState(false);
+
+    React.useEffect(() => {
+        if (!swiperRef) return;
+        
+        const interval = setInterval(() => {
+            if (!isPaused) {
+                swiperRef.slideNext();
+            }
+        }, 4000);
+
+        return () => clearInterval(interval);
+    }, [swiperRef, isPaused]);
 
     return (
         <div className={classNames('w-full', 'relative', { 'mt-12': hasTopMargin })} {...(hasAnnotations && { 'data-sb-field-path': '.items' })}>
-            <Swiper effect={'fade'} fadeEffect={{ crossFade: true }} speed={500} loop={true} autoHeight={true} modules={[EffectFade]} onSwiper={setSwiperRef}>
-                {items.map((item, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="w-full max-w-5xl mx-auto">
-                            <FeaturedItem {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            <div onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+                <Swiper effect={'fade'} fadeEffect={{ crossFade: true }} speed={800} loop={true} autoHeight={true} modules={[EffectFade]} onSwiper={setSwiperRef}>
+                    {items.map((item, index) => (
+                        <SwiperSlide key={index}>
+                            <div className="w-full max-w-5xl mx-auto">
+                                <FeaturedItem {...item} hasSectionTitle={hasSectionTitle} {...(hasAnnotations && { 'data-sb-field-path': `.${index}` })} />
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
             <div className={classNames('sb-carousel-nav', items.length > 1 ? 'flex justify-center mt-8 xl:mt-0' : 'hidden')}>
                 <button
                     className="inline-flex items-center justify-center w-10 h-10 mx-2 rounded-full cursor-pointer sb-carousel-prev xl:absolute xl:left-0 xl:top-1/2 xl:-translate-y-1/2 xl:z-50"
                     aria-label="Previous"
-                    onClick={() => {
-                        swiperRef?.slidePrev();
-                    }}
+                    onClick={() => swiperRef?.slidePrev()}
                 >
                     <ChevronBigLeftIcon className="w-6 h-6 fill-current" />
                 </button>
                 <button
                     className="inline-flex items-center justify-center w-10 h-10 mx-2 rounded-full cursor-pointer sb-carousel-next xl:absolute xl:right-0 xl:top-1/2 xl:-translate-y-1/2 xl:z-50"
                     aria-label="Next"
-                    onClick={() => {
-                        swiperRef?.slideNext();
-                    }}
+                    onClick={() => swiperRef?.slideNext()}
                 >
                     <ChevronBigRightIcon className="w-6 h-6 fill-current" />
                 </button>

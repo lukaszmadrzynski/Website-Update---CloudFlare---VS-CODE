@@ -5,13 +5,13 @@ sections:
   - type: GenericSection
     title:
       type: TitleBlock
-      text: Let's Start Planning Your China Travel Adventure!
+      text: Let's Start Planning Your Yunnan Adventure!
       color: text-dark
       styles:
         self:
           textAlign: center
     subtitle: ''
-    text: "<div style=\"text-align: center\">We're eager to help you design your unforgettable and\_responsible travel experience in Yunnan, China.\_Reach out to us directly to discuss your\_private eco-tour,  join-in family or student eco-camp in Lijiang and Shangri-La.</div>\n\n"
+    text: "<div style=\"text-align: center\">We're eager to help you design your unforgettable and responsible ecoexperience in Yunnan. <br>Contact us directly to **Book Your Private EcoTour** or to **Discuss Potential Partnership**.</div>\n\n"
     actions: []
     media:
       type: ImageBlock
@@ -134,16 +134,15 @@ sections:
           textAlign: center
     subtitle: ''
     text: >+
-      <div style="text-align: center">Stay up-to-date on our latest ecotours,
-      camps and projects in Yunnan, see stunning photos and videos from our
-      China travels, and get inspired for your own adventure by following us on
+      <div style="text-align: center">Stay up-to-date on our latest ecotours and projects in Yunnan, see stunning photos and videos from our
+      travels, and get inspired for your own adventure by following us on
       social media:</div>
 
     actions:
       - type: Link
         label: Instagram
         altText: Instagram
-        url: 'https://www.instagram.com/cloud.mountain.sustainability/'
+        url: 'https://www.instagram.com/cloud.mountain.ecotours/'
         showIcon: true
         icon: instagram
         iconPosition: left

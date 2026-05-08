@@ -25,11 +25,12 @@ export default function SelectFormControl(props) {
             {label && (
                 <label
                     id={labelId}
-                    className={classNames('sb-label', 'inline-block', 'sm:mb-1.5', { 'sr-only': hideLabel })}
+                    className={classNames('sb-label', 'inline-block', 'sm:mb-1.5', 'font-bold', { 'sr-only': hideLabel })}
                     htmlFor={name}
                     {...(fieldPath && { 'data-sb-field-path': '.label .name#@for' })}
                 >
                     {label}
+                    {isRequired && <span className="text-primary ml-1">*</span>}
                 </label>
             )}
             <div className="relative">
@@ -55,11 +56,11 @@ export default function SelectFormControl(props) {
                 >
                     {defaultValue && <option value="">{defaultValue}</option>}
                     {options.length > 0 &&
-                        options.map((option, index) => (
-                            <option key={index} value={option}>
-                                {option}
-                            </option>
-                        ))}
+                        options.map((option, index) => {
+                            const optionValue = typeof option === 'object' ? option.value : option;
+                            const optionLabel = typeof option === 'object' ? option.label : option;
+                            return <option key={index} value={optionValue}>{optionLabel}</option>;
+                        })}
                 </select>
                 <ChevronDownIcon className="sb-select-icon w-5 h-5 absolute top-1/2 -translate-y-1/2 right-2 fill-current pointer-events-none" />
             </div>
